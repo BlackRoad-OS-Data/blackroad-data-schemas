@@ -74,6 +74,16 @@
     Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore. Layout saves to localStorage and restores after refresh.
   </div>
 
+  <section id="workspace-presets">
+    <h2>Workspace Presets</h2>
+    <p><strong>MOCK presets.</strong> Rearranges local RoadOS slots and saves layout in this browser only.</p>
+    <button onclick="applyWorkspacePreset('email')">Email Setup MOCK</button>
+    <button onclick="applyWorkspacePreset('coding')">Coding Setup MOCK</button>
+    <button onclick="applyWorkspacePreset('roadtrip')">RoadTrip Setup MOCK</button>
+    <button onclick="saveCurrentWorkspacePreset()">Save Current Layout MOCK</button>
+    <pre id="workspacePresetOutput">No workspace preset applied yet.</pre>
+  </section>
+
   <section id="local-state-controls">
     <h2>Local State / JSON</h2>
     <p><strong>MOCK local persistence.</strong> Saves to this browser only using localStorage. Export/import uses pasted JSON. No server.</p>
@@ -110,6 +120,24 @@
 <script>
 const now = () => new Date().toISOString();
 const STORAGE_KEY = "blackroad.roados.email_workflow_plain_proof.v0";
+
+const workspacePresets = {
+  email: {
+    name: "Email Setup",
+    slot_order: ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"],
+    stored_slots: []
+  },
+  coding: {
+    name: "Coding Setup",
+    slot_order: ["slot-5", "slot-8", "slot-7", "slot-4", "slot-1", "slot-2", "slot-3", "slot-6"],
+    stored_slots: ["slot-6"]
+  },
+  roadtrip: {
+    name: "RoadTrip Setup",
+    slot_order: ["slot-2", "slot-8", "slot-5", "slot-7", "slot-1", "slot-4", "slot-3", "slot-6"],
+    stored_slots: []
+  }
+};
 
 let state = {
   selectedId: "email-001",
@@ -259,6 +287,40 @@ function applyLayoutState() {
       stored.appendChild(btn);
     });
   }
+}
+
+function applyWorkspacePreset(name) {
+  ensureLayoutState();
+
+  const preset = workspacePresets[name];
+  if (!preset) {
+    alert("Unknown preset: " + name);
+    return;
+  }
+
+  state.layout.slot_order = preset.slot_order.slice();
+  state.layout.stored_slots = preset.stored_slots.slice();
+  state.layout.updated_at = now();
+  saveState();
+  applyLayoutState();
+
+  const output = document.getElementById("workspacePresetOutput");
+  if (output) {
+    output.textContent = "Applied " + preset.name + "\n" + JSON.stringify(state.layout, null, 2);
+  }
+
+  receipt("apply_workspace_preset_mock", "Applied " + preset.name + " workspace preset.");
+}
+
+function saveCurrentWorkspacePreset() {
+  recordLayoutState();
+
+  const output = document.getElementById("workspacePresetOutput");
+  if (output) {
+    output.textContent = "Saved current layout MOCK\n" + JSON.stringify(state.layout, null, 2);
+  }
+
+  receipt("save_workspace_layout_mock", "Saved current RoadOS layout to local browser state.");
 }
 
 function selectedEmail() {
