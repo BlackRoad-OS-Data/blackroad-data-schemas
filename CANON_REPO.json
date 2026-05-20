@@ -1,0 +1,23 @@
+{
+  "branch_policy": "main clean; blackroad-lab for experiments",
+  "claim": "canon repo identity only; no implemented functionality claimed",
+  "current_status": "planned",
+  "deploy_target": "unknown",
+  "generated_artifacts_policy": "do not commit generated runtime artifacts unless promoted",
+  "honesty_status": "initialized_shell",
+  "how_to_deploy": "pending",
+  "how_to_run_locally": "pending",
+  "initialized_at_utc": "2026-05-20T14:47:53.104155+00:00",
+  "last_audit_note": "canon repo plan generated locally; repo may not exist on GitHub yet",
+  "owner_org": "BlackRoad-OS-Data",
+  "purpose": "D1, SQLite, Postgres, JSON, TSV, and registry schema definitions.",
+  "registry_status": "planned",
+  "related_agents": [],
+  "related_domains": [],
+  "related_products": [],
+  "repo": "blackroad-data-schemas",
+  "repo_number": 2,
+  "secrets_policy": "no secrets in repo",
+  "status": "planned",
+  "visibility": "public_or_private_by_review"
+}
