@@ -29,6 +29,17 @@
     Every action changes local browser state and writes a visible mock receipt.
   </div>
 
+  <section id="local-state-controls">
+    <h2>Local State / JSON</h2>
+    <p><strong>MOCK local persistence.</strong> Saves to this browser only using localStorage. Export/import uses pasted JSON. No server.</p>
+    <button onclick="saveState(); receipt('manual_save', 'Saved current local state to browser localStorage.');">Save Local State MOCK</button>
+    <button onclick="exportState()">Export JSON</button>
+    <button onclick="importState()">Import Pasted JSON MOCK</button>
+    <button onclick="resetLocalState()">Reset Local State MOCK</button>
+    <br>
+    <textarea id="stateJsonIO" placeholder="Exported state appears here. Paste JSON here to import."></textarea>
+  </section>
+
   <div class="grid">
     <section id="slot-1"><h2>1. Inbox List</h2><div id="inbox"></div></section>
     <section id="slot-2"><h2>2. Email Thread</h2><div id="thread"></div></section>
@@ -47,6 +58,7 @@
 
 <script>
 const now = () => new Date().toISOString();
+const STORAGE_KEY = "blackroad.roados.email_workflow_plain_proof.v0";
 
 let state = {
   selectedId: "email-001",
@@ -74,6 +86,54 @@ let state = {
   ],
   receipts: []
 };
+
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (err) {
+    console.warn("MOCK local save failed", err);
+  }
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const loaded = JSON.parse(raw);
+    if (loaded && Array.isArray(loaded.emails) && Array.isArray(loaded.receipts)) {
+      state = loaded;
+    }
+  } catch (err) {
+    console.warn("MOCK local load failed", err);
+  }
+}
+
+function exportState() {
+  const box = document.getElementById("stateJsonIO");
+  box.value = JSON.stringify(state, null, 2);
+  receipt("export_json_mock", "Exported current browser state as JSON into textarea.");
+}
+
+function importState() {
+  const box = document.getElementById("stateJsonIO");
+  try {
+    const imported = JSON.parse(box.value);
+    if (!imported || !Array.isArray(imported.emails) || !Array.isArray(imported.receipts)) {
+      alert("Invalid state JSON: expected emails[] and receipts[].");
+      return;
+    }
+    state = imported;
+    saveState();
+    receipt("import_json_mock", "Imported pasted JSON into browser state.");
+  } catch (err) {
+    alert("Could not parse JSON.");
+  }
+}
+
+function resetLocalState() {
+  localStorage.removeItem(STORAGE_KEY);
+  receipt("reset_local_state_mock", "Removed saved localStorage state. Reload page to return to default seed.");
+}
 
 function selectedEmail() {
   return state.emails.find(e => e.id === state.selectedId);
@@ -168,7 +228,10 @@ function giveAgentContext() {
   receipt("agent_context_mock", "Context shared with Roadie MOCK.");
 }
 
+loadState();
+
 function render() {
+  saveState();
   const e = selectedEmail();
 
   document.getElementById("inbox").innerHTML = state.emails.map(email => `
