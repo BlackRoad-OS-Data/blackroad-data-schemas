@@ -19,6 +19,25 @@
     .dock button { min-height: 54px; }
     pre { white-space: pre-wrap; background: #f2f2f2; padding: 8px; max-height: 160px; overflow: auto; }
     @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .dock { grid-template-columns: repeat(2, 1fr); } }
+  
+    .expanded-window {
+      position: fixed;
+      inset: 16px;
+      z-index: 999;
+      background: white;
+      min-height: auto;
+      overflow: auto;
+      box-shadow: 0 0 0 9999px rgba(0,0,0,.35);
+    }
+
+    .restore-button {
+      float: right;
+      margin-left: 8px;
+    }
+
+    .window-focused {
+      outline: 3px solid #111;
+    }
   </style>
 </head>
 <body>
@@ -26,7 +45,7 @@
   <div class="truth">
     <strong><span class="mock">LOCAL MOCK PROOF.</span></strong>
     No Gmail. No real send. No external API. No secrets. No production claim.
-    Every action changes local browser state and writes a visible mock receipt.
+    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return.
   </div>
 
   <section id="local-state-controls">
@@ -230,6 +249,72 @@ function giveAgentContext() {
 
 loadState();
 
+
+function restoreExpanded() {
+  document.querySelectorAll(".expanded-window").forEach(el => {
+    el.classList.remove("expanded-window");
+    const btn = el.querySelector(".restore-button");
+    if (btn) btn.remove();
+  });
+  receipt("restore_window_mock", "Restored expanded RoadOS window to original road spot.");
+}
+
+function expandSlot(section) {
+  if (section.classList.contains("expanded-window")) {
+    restoreExpanded();
+    return;
+  }
+
+  document.querySelectorAll(".expanded-window").forEach(el => {
+    el.classList.remove("expanded-window");
+    const btn = el.querySelector(".restore-button");
+    if (btn) btn.remove();
+  });
+
+  section.classList.add("expanded-window");
+
+  if (!section.querySelector(".restore-button")) {
+    const btn = document.createElement("button");
+    btn.className = "restore-button";
+    btn.textContent = "Restore";
+    btn.onclick = (event) => {
+      event.stopPropagation();
+      restoreExpanded();
+    };
+    section.insertBefore(btn, section.firstChild);
+  }
+
+  receipt("expand_window_mock", "Expanded " + section.id + " toward full screen.");
+}
+
+function focusSlot(section) {
+  document.querySelectorAll(".grid section").forEach(el => el.classList.remove("window-focused"));
+  section.classList.add("window-focused");
+}
+
+function setupWindowBehavior() {
+  document.querySelectorAll(".grid section").forEach(section => {
+    if (section.dataset.roadBound === "true") return;
+    section.dataset.roadBound = "true";
+
+    section.addEventListener("click", () => {
+      focusSlot(section);
+    });
+
+    section.addEventListener("dblclick", (event) => {
+      if (event.target.tagName === "BUTTON" || event.target.tagName === "TEXTAREA" || event.target.tagName === "SELECT") return;
+      expandSlot(section);
+    });
+  });
+
+  if (!window.__roadEscapeBound) {
+    window.__roadEscapeBound = true;
+    window.addEventListener("keydown", event => {
+      if (event.key === "Escape") restoreExpanded();
+    });
+  }
+}
+
 function render() {
   saveState();
   const e = selectedEmail();
@@ -264,6 +349,7 @@ function render() {
   document.getElementById("attachments").innerHTML = e.attachments.map(name => `<button onclick="previewAttachment(&quot;${name}&quot;)">${name} MOCK</button><br>`).join("");
 
   document.getElementById("receipts").textContent = state.receipts.length ? JSON.stringify(state.receipts, null, 2) : "No receipts yet.";
+  setupWindowBehavior();
 }
 
 render();

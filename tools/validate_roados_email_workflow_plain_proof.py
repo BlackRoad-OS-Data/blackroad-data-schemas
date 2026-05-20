@@ -26,6 +26,12 @@ required_terms = [
     "awaiting_type",
     "receipt",
     "MOCK",
+    "Double-click any slot to expand",
+    "Escape",
+    "setupWindowBehavior",
+    "expandSlot",
+    "restoreExpanded",
+    "expanded-window",
 ]
 
 missing = []
