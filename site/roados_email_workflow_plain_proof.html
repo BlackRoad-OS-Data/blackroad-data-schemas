@@ -74,6 +74,15 @@
     Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore. Layout saves to localStorage and restores after refresh.
   </div>
 
+  <section id="local-search-controls">
+    <h2>Local Search / Recall</h2>
+    <p><strong>MOCK local search.</strong> Searches browser-local emails, workflow tasks, and receipts only. No external search.</p>
+    <input id="localSearchQuery" placeholder="Search emails, tasks, receipts..." style="width: 70%;">
+    <button onclick="runLocalSearch()">Search Local State MOCK</button>
+    <button onclick="clearLocalSearch()">Clear Search</button>
+    <pre id="localSearchResults">No search run yet.</pre>
+  </section>
+
   <section id="workspace-package-controls">
     <h2>Workspace Package Import / Export</h2>
     <p><strong>MOCK portable workspace package.</strong> Exports local browser state, layout, emails, tasks, and receipts as JSON. No server.</p>
@@ -298,6 +307,72 @@ function applyLayoutState() {
       stored.appendChild(btn);
     });
   }
+}
+
+function runLocalSearch() {
+  const q = document.getElementById("localSearchQuery").value.trim().toLowerCase();
+  const out = document.getElementById("localSearchResults");
+
+  if (!q) {
+    out.textContent = "Enter a search query.";
+    return;
+  }
+
+  const results = [];
+
+  state.emails.forEach(email => {
+    const emailText = [
+      email.id,
+      email.from,
+      email.subject,
+      email.body,
+      email.received_at,
+      email.read_at || "",
+      email.workflow.index_id,
+      email.workflow.status,
+      email.workflow.claimed_by,
+      email.workflow.awaiting_type,
+      ...(email.workflow.tasks || []),
+      ...(email.attachments || [])
+    ].join(" ").toLowerCase();
+
+    if (emailText.includes(q)) {
+      results.push({
+        type: "email_or_workflow",
+        email_id: email.id,
+        workflow_item_id: email.workflow.index_id,
+        subject: email.subject,
+        status: email.workflow.status,
+        mock: true
+      });
+    }
+  });
+
+  state.receipts.forEach(rcpt => {
+    const receiptText = JSON.stringify(rcpt).toLowerCase();
+    if (receiptText.includes(q)) {
+      results.push({
+        type: "receipt",
+        receipt_id: rcpt.receipt_id,
+        action: rcpt.action,
+        workflow_item_id: rcpt.workflow_item_id,
+        at: rcpt.at,
+        mock: true
+      });
+    }
+  });
+
+  out.textContent = results.length
+    ? JSON.stringify(results, null, 2)
+    : "No local MOCK results found for: " + q;
+
+  receipt("local_search_mock", "Searched local browser state for: " + q + ". Results: " + results.length + ".");
+}
+
+function clearLocalSearch() {
+  document.getElementById("localSearchQuery").value = "";
+  document.getElementById("localSearchResults").textContent = "No search run yet.";
+  receipt("clear_local_search_mock", "Cleared local MOCK search box/results.");
 }
 
 function makeWorkspacePackage() {
