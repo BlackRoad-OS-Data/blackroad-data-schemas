@@ -74,6 +74,16 @@
     Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore. Layout saves to localStorage and restores after refresh.
   </div>
 
+  <section id="workspace-package-controls">
+    <h2>Workspace Package Import / Export</h2>
+    <p><strong>MOCK portable workspace package.</strong> Exports local browser state, layout, emails, tasks, and receipts as JSON. No server.</p>
+    <button onclick="exportWorkspacePackage()">Export Workspace Package MOCK</button>
+    <button onclick="importWorkspacePackage()">Import Workspace Package MOCK</button>
+    <button onclick="downloadWorkspacePackage()">Download JSON MOCK</button>
+    <br>
+    <textarea id="workspacePackageIO" placeholder="Workspace package JSON appears here. Paste package JSON here to import."></textarea>
+  </section>
+
   <section id="workspace-presets">
     <h2>Workspace Presets</h2>
     <p><strong>MOCK presets.</strong> Rearranges local RoadOS slots and saves layout in this browser only.</p>
@@ -120,6 +130,7 @@
 <script>
 const now = () => new Date().toISOString();
 const STORAGE_KEY = "blackroad.roados.email_workflow_plain_proof.v0";
+const WORKSPACE_PACKAGE_VERSION = "roadwork-email-workflow-package-v0";
 
 const workspacePresets = {
   email: {
@@ -287,6 +298,76 @@ function applyLayoutState() {
       stored.appendChild(btn);
     });
   }
+}
+
+function makeWorkspacePackage() {
+  recordLayoutState();
+
+  return {
+    package_version: WORKSPACE_PACKAGE_VERSION,
+    exported_at: now(),
+    source: "RoadOS Email Workflow Plain Proof",
+    honesty: {
+      mock: true,
+      no_gmail: true,
+      no_real_send: true,
+      no_external_api: true,
+      no_secrets: true,
+      no_production_claim: true
+    },
+    state: state
+  };
+}
+
+function exportWorkspacePackage() {
+  const box = document.getElementById("workspacePackageIO");
+  const pkg = makeWorkspacePackage();
+  box.value = JSON.stringify(pkg, null, 2);
+  receipt("export_workspace_package_mock", "Exported full MOCK workspace package JSON.");
+}
+
+function importWorkspacePackage() {
+  const box = document.getElementById("workspacePackageIO");
+
+  try {
+    const pkg = JSON.parse(box.value);
+
+    if (!pkg || pkg.package_version !== WORKSPACE_PACKAGE_VERSION) {
+      alert("Invalid package: package_version mismatch.");
+      return;
+    }
+
+    if (!pkg.state || !Array.isArray(pkg.state.emails) || !Array.isArray(pkg.state.receipts)) {
+      alert("Invalid package: missing state.emails[] or state.receipts[].");
+      return;
+    }
+
+    state = pkg.state;
+    ensureLayoutState();
+    saveState();
+    applyLayoutState();
+
+    receipt("import_workspace_package_mock", "Imported full MOCK workspace package JSON.");
+  } catch (err) {
+    alert("Could not parse workspace package JSON.");
+  }
+}
+
+function downloadWorkspacePackage() {
+  const pkg = makeWorkspacePackage();
+  const text = JSON.stringify(pkg, null, 2);
+  const blob = new Blob([text], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "roados-email-workflow-package-v0.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+
+  receipt("download_workspace_package_mock", "Downloaded full MOCK workspace package JSON.");
 }
 
 function applyWorkspacePreset(name) {
