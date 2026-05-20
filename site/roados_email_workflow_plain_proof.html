@@ -74,6 +74,33 @@
     Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore. Layout saves to localStorage and restores after refresh.
   </div>
 
+  <section id="inbox-filter-controls">
+    <h2>Inbox Filter / Sort</h2>
+    <p><strong>MOCK local filter.</strong> Filters browser-local workflow/email state only.</p>
+    <label>Status:</label>
+    <select id="inboxStatusFilter" onchange="render(); receipt('filter_status_mock', 'Changed local inbox status filter to ' + this.value + '.');">
+      <option value="all">all</option>
+      <option value="received">received</option>
+      <option value="read">read</option>
+      <option value="triaged">triaged</option>
+      <option value="in_progress">in_progress</option>
+      <option value="awaiting">awaiting</option>
+      <option value="done">done</option>
+      <option value="archived">archived</option>
+    </select>
+
+    <label>Sort:</label>
+    <select id="inboxSortMode" onchange="render(); receipt('sort_inbox_mock', 'Changed local inbox sort mode to ' + this.value + '.');">
+      <option value="received_desc">received newest first</option>
+      <option value="received_asc">received oldest first</option>
+      <option value="subject_asc">subject A-Z</option>
+      <option value="status_asc">status A-Z</option>
+    </select>
+
+    <button onclick="clearInboxFilters()">Clear Filters MOCK</button>
+    <pre id="inboxFilterSummary">No filter applied yet.</pre>
+  </section>
+
   <section id="local-search-controls">
     <h2>Local Search / Recall</h2>
     <p><strong>MOCK local search.</strong> Searches browser-local emails, workflow tasks, and receipts only. No external search.</p>
@@ -791,7 +818,7 @@ function render() {
   saveState();
   const e = selectedEmail();
 
-  document.getElementById("inbox").innerHTML = state.emails.map(email => `
+  document.getElementById("inbox").innerHTML = getFilteredEmails().map(email => `
     <div class="item ${email.id === state.selectedId ? "active" : ""}" onclick="selectEmail(&quot;${email.id}&quot;)">
       <strong>${email.subject}</strong><br>
       From: ${email.from}<br>
