@@ -27,6 +27,52 @@ case "$CMD" in
   log)
     git -C "$ROOT" log --oneline -5
     ;;
+  doctor)
+    echo "=== RoadOS Doctor ==="
+    echo ""
+
+    set +e
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" check
+    CHECK_RC=$?
+    set -e
+
+    echo ""
+    echo "=== Git Branch ==="
+    git -C "$ROOT" branch --show-current
+
+    echo ""
+    echo "=== Git Status ==="
+    STATUS="$(git -C "$ROOT" status --short)"
+    if [ -z "$STATUS" ]; then
+      echo "GREEN clean"
+    else
+      echo "YELLOW dirty"
+      printf '%s\n' "$STATUS"
+    fi
+
+    echo ""
+    echo "=== Recent Commits ==="
+    git -C "$ROOT" log --oneline -5
+
+    echo ""
+    echo "=== Open PR For Current Branch ==="
+    BRANCH="$(git -C "$ROOT" branch --show-current)"
+    gh pr list \
+      --repo BlackRoad-OS-Data/blackroad-data-schemas \
+      --head "$BRANCH" \
+      --state open \
+      --json number,title,isDraft,baseRefName,headRefName,url \
+      --jq '.[] | {number,title,isDraft,base:.baseRefName,head:.headRefName,url}' || true
+
+    echo ""
+    if [ "$CHECK_RC" -eq 0 ]; then
+      echo "DOCTOR RESULT: GREEN/YELLOW usable. Review any yellow items."
+    else
+      echo "DOCTOR RESULT: RED blocking issue. Fix before PR/merge."
+    fi
+
+    exit "$CHECK_RC"
+    ;;
   help|--help|-h)
     cat <<'EOF'
 RoadOS Email Workflow Proof
@@ -39,6 +85,7 @@ Commands:
   ./roados where       Show important paths
   ./roados status      Git status
   ./roados log         Recent commits
+  ./roados doctor      Check + git status + PR status
 
 Still local proof only:
   no Gmail
