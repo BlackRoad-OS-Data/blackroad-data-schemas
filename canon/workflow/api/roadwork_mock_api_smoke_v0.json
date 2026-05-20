@@ -1,0 +1,304 @@
+{
+  "allowed_after_archive": {
+    "actions": [
+      {
+        "action": "restore",
+        "enabled_when": [
+          "workflow.status == 'archived'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "archived",
+        "kind": "primary",
+        "label": "Restore",
+        "requires_receipt": false,
+        "to_status": "done"
+      }
+    ],
+    "status": "archived",
+    "workflow_item_id": "wf_universal_172_sample_20260520"
+  },
+  "allowed_before": {
+    "actions": [
+      {
+        "action": "reopen",
+        "enabled_when": [
+          "workflow.status == 'done'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "done",
+        "kind": "warning",
+        "label": "Reopen",
+        "requires_receipt": true,
+        "to_status": "in_progress"
+      },
+      {
+        "action": "archive",
+        "enabled_when": [
+          "workflow.status == 'done'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "done",
+        "kind": "secondary",
+        "label": "Archive",
+        "requires_receipt": true,
+        "to_status": "archived"
+      }
+    ],
+    "status": "done",
+    "workflow_item_id": "wf_universal_172_sample_20260520"
+  },
+  "events": [
+    {
+      "actor": "alexandria",
+      "after_status": "triaged",
+      "before_status": "received",
+      "created_at": "2026-05-20T17:09:07.552286+00:00",
+      "event_type": "claim",
+      "id": "evt_workflow_runner_v0_01",
+      "metadata_json": "{\"claimed_by\": \"alexandria\"}",
+      "note": "Operator claimed workflow item.",
+      "receipt_id": "rcpt_workflow_runner_v0_01",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "in_progress",
+      "before_status": "triaged",
+      "created_at": "2026-05-20T17:09:07.552550+00:00",
+      "event_type": "start_work",
+      "id": "evt_workflow_runner_v0_02",
+      "metadata_json": "{}",
+      "note": "Operator started workflow work.",
+      "receipt_id": "rcpt_workflow_runner_v0_02",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "awaiting",
+      "before_status": "in_progress",
+      "created_at": "2026-05-20T17:09:07.552576+00:00",
+      "event_type": "set_awaiting",
+      "id": "evt_workflow_runner_v0_03",
+      "metadata_json": "{\"awaiting_note\": \"Approve next phase before generating repo/project issues.\", \"awaiting_owner\": \"alexandria\", \"awaiting_type\": \"operator_approval\"}",
+      "note": "Workflow is awaiting operator approval for next execution phase.",
+      "receipt_id": "rcpt_workflow_runner_v0_03",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "in_progress",
+      "before_status": "awaiting",
+      "created_at": "2026-05-20T17:09:07.552653+00:00",
+      "event_type": "resolve_awaiting",
+      "id": "evt_workflow_runner_v0_04",
+      "metadata_json": "{}",
+      "note": "Operator approval received.",
+      "receipt_id": "rcpt_workflow_runner_v0_04",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "done",
+      "before_status": "in_progress",
+      "created_at": "2026-05-20T17:09:07.552692+00:00",
+      "event_type": "complete",
+      "id": "evt_workflow_runner_v0_05",
+      "metadata_json": "{}",
+      "note": "Sample transition sequence completed.",
+      "receipt_id": "rcpt_workflow_runner_v0_05",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "archived",
+      "before_status": "done",
+      "created_at": "2026-05-20T17:15:20.884916+00:00",
+      "event_type": "archive",
+      "id": "evt_mock_api_archive_2026-05-20T171520884916+0000",
+      "metadata_json": "{}",
+      "note": "Mock API archived completed sample workflow.",
+      "receipt_id": "rcpt_mock_api_archive_2026-05-20T171520884916+0000",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "done",
+      "before_status": "archived",
+      "created_at": "2026-05-20T17:15:20.885943+00:00",
+      "event_type": "restore",
+      "id": "evt_mock_api_restore_2026-05-20T171520885943+0000",
+      "metadata_json": "{}",
+      "note": "Mock API restored archived sample workflow.",
+      "receipt_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    }
+  ],
+  "generated_at_utc": "2026-05-20T17:15:20.883691+00:00",
+  "initial_item": {
+    "awaiting_note": null,
+    "awaiting_owner": null,
+    "awaiting_since": null,
+    "awaiting_type": null,
+    "claimed_at": "2026-05-20T17:09:07.552286+00:00",
+    "claimed_by": "alexandria",
+    "created_at": "2026-05-20T17:06:03.038344+00:00",
+    "description": "Sample RoadWork workflow generated from the Universal 172-step canon template.",
+    "due_at": null,
+    "escalation_at": null,
+    "id": "wf_universal_172_sample_20260520",
+    "index_id": "WF-2026-0520-0001",
+    "is_collaborative": 1,
+    "read_at": null,
+    "read_by": null,
+    "received_at": "2026-05-20T17:06:03.038344+00:00",
+    "sla_resolution_at": null,
+    "sla_response_at": null,
+    "source": "local_canon",
+    "source_id": "universal_172_process.json",
+    "status": "done",
+    "title": "Universal 172-Step Repeatable Process Sample",
+    "updated_at": "2026-05-20T17:09:07.552692+00:00"
+  },
+  "item_after_archive": {
+    "awaiting_note": null,
+    "awaiting_owner": null,
+    "awaiting_since": null,
+    "awaiting_type": null,
+    "claimed_at": "2026-05-20T17:09:07.552286+00:00",
+    "claimed_by": "alexandria",
+    "created_at": "2026-05-20T17:06:03.038344+00:00",
+    "description": "Sample RoadWork workflow generated from the Universal 172-step canon template.",
+    "due_at": null,
+    "escalation_at": null,
+    "id": "wf_universal_172_sample_20260520",
+    "index_id": "WF-2026-0520-0001",
+    "is_collaborative": 1,
+    "read_at": null,
+    "read_by": null,
+    "received_at": "2026-05-20T17:06:03.038344+00:00",
+    "sla_resolution_at": null,
+    "sla_response_at": null,
+    "source": "local_canon",
+    "source_id": "universal_172_process.json",
+    "status": "archived",
+    "title": "Universal 172-Step Repeatable Process Sample",
+    "updated_at": "2026-05-20T17:15:20.884916+00:00"
+  },
+  "item_after_restore": {
+    "awaiting_note": null,
+    "awaiting_owner": null,
+    "awaiting_since": null,
+    "awaiting_type": null,
+    "claimed_at": "2026-05-20T17:09:07.552286+00:00",
+    "claimed_by": "alexandria",
+    "created_at": "2026-05-20T17:06:03.038344+00:00",
+    "description": "Sample RoadWork workflow generated from the Universal 172-step canon template.",
+    "due_at": null,
+    "escalation_at": null,
+    "id": "wf_universal_172_sample_20260520",
+    "index_id": "WF-2026-0520-0001",
+    "is_collaborative": 1,
+    "read_at": null,
+    "read_by": null,
+    "received_at": "2026-05-20T17:06:03.038344+00:00",
+    "sla_resolution_at": null,
+    "sla_response_at": null,
+    "source": "local_canon",
+    "source_id": "universal_172_process.json",
+    "status": "done",
+    "title": "Universal 172-Step Repeatable Process Sample",
+    "updated_at": "2026-05-20T17:15:20.885943+00:00"
+  },
+  "post_archive": {
+    "action": "archive",
+    "after_status": "archived",
+    "before_status": "done",
+    "ok": true,
+    "receipt_id": "rcpt_mock_api_archive_2026-05-20T171520884916+0000",
+    "receipt_required": true,
+    "workflow_item_id": "wf_universal_172_sample_20260520"
+  },
+  "post_restore": {
+    "action": "restore",
+    "after_status": "done",
+    "before_status": "archived",
+    "ok": true,
+    "receipt_id": null,
+    "receipt_required": false,
+    "workflow_item_id": "wf_universal_172_sample_20260520"
+  },
+  "receipts": [
+    {
+      "action": "claim",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552286+00:00",
+      "id": "rcpt_workflow_runner_v0_01",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "start_work",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552550+00:00",
+      "id": "rcpt_workflow_runner_v0_02",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "set_awaiting",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552576+00:00",
+      "id": "rcpt_workflow_runner_v0_03",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "resolve_awaiting",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552653+00:00",
+      "id": "rcpt_workflow_runner_v0_04",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "complete",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552692+00:00",
+      "id": "rcpt_workflow_runner_v0_05",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "archive",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:15:20.884916+00:00",
+      "id": "rcpt_mock_api_archive_2026-05-20T171520884916+0000",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/roadwork-mock-api-smoke-v0-receipt-20260520.md",
+      "receipt_type": "mock_api_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    }
+  ],
+  "status": {
+    "base_path": "/api/workflow",
+    "contract": "RoadWork Workflow API Contract",
+    "ok": true,
+    "version": "0.1"
+  }
+}

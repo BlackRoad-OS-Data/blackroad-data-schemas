@@ -1,0 +1,51 @@
+{
+  "name": "BlackRoad Universal Workflow State Model",
+  "version": "0.1",
+  "statuses": [
+    "received",
+    "triaged",
+    "in_progress",
+    "awaiting",
+    "collaborating",
+    "done",
+    "archived"
+  ],
+  "fields": {
+    "received": ["received_at", "source", "source_id"],
+    "read": ["read_at", "read_by"],
+    "claimed": ["claimed_by", "claimed_at"],
+    "collaboration": ["is_collaborative", "collaborators"],
+    "task": ["task_id", "title", "description", "parent_id"],
+    "index": ["index_id", "tags", "search_text"],
+    "awaiting": ["awaiting_type", "awaiting_since", "awaiting_owner", "awaiting_note"],
+    "timelines": ["due_at", "sla_response_at", "sla_resolution_at", "escalation_at"]
+  },
+  "awaiting_types": [
+    "customer_response",
+    "internal_approval",
+    "external_vendor",
+    "parts_shipment",
+    "legal_review",
+    "operator_approval",
+    "agent_handoff",
+    "deployment_window",
+    "security_review",
+    "data_access"
+  ],
+  "valid_actions": {
+    "received": ["claim", "mark_read", "escalate", "close"],
+    "triaged": ["start_work", "create_subtask", "set_awaiting", "collaborate"],
+    "in_progress": ["add_subtask", "update_progress", "set_awaiting", "complete"],
+    "awaiting": ["resolve_awaiting", "escalate", "reassign"],
+    "collaborating": ["add_collaborator", "remove_collaborator", "set_awaiting", "complete"],
+    "done": ["reopen", "archive"],
+    "archived": ["restore"]
+  },
+  "audit_logs": [
+    "status_history",
+    "awaiting_log",
+    "actions_log",
+    "timeline_events",
+    "receipt_log"
+  ]
+}

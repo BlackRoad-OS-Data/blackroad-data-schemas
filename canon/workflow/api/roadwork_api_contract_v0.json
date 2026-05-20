@@ -1,0 +1,228 @@
+{
+  "auth_policy": {
+    "dangerous_actions_require_receipt": true,
+    "default": "operator_or_granted_agent_required",
+    "identity_layer": "CarKeys"
+  },
+  "base_path": "/api/workflow",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/workflow/status",
+      "purpose": "Return API health and contract version.",
+      "request": {},
+      "response": {
+        "ok": true,
+        "version": "0.1"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items",
+      "purpose": "List workflow items with filters.",
+      "request": {
+        "query": {
+          "awaiting_type": "optional awaiting filter",
+          "claimed_by": "optional owner filter",
+          "limit": "default 50",
+          "status": "optional status filter"
+        }
+      },
+      "response": {
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflow/items",
+      "purpose": "Create a new workflow item from RoadWire, OneWay, manual input, API, or agent.",
+      "request": {
+        "body": {
+          "description": "optional",
+          "source": "required",
+          "source_id": "optional",
+          "title": "required"
+        }
+      },
+      "response": {
+        "item": "workflow_item"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id",
+      "purpose": "Read one workflow item with task counts and current state.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "item": "workflow_item"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id/tasks",
+      "purpose": "List tasks and subtasks attached to a workflow item.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "count": 0,
+        "tasks": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id/allowed-actions",
+      "purpose": "Return valid action buttons for the item current status.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "actions": [],
+        "status": "received"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflow/items/:id/actions",
+      "purpose": "Run a validated workflow action such as claim, start_work, set_awaiting, complete, archive, or reopen.",
+      "request": {
+        "body": {
+          "action": "required",
+          "actor": "required",
+          "metadata": "optional object",
+          "note": "optional"
+        },
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "after_status": "triaged",
+        "before_status": "received",
+        "ok": true,
+        "receipt_id": "required for receipt-required actions"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id/events",
+      "purpose": "List event history for one workflow item.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "count": 0,
+        "events": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id/actions",
+      "purpose": "List action history for one workflow item.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "actions": [],
+        "count": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id/receipts",
+      "purpose": "List receipts linked to one workflow item.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "count": 0,
+        "receipts": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/items/:id/timeline",
+      "purpose": "List due dates, SLA deadlines, escalations, and awaiting timeline events.",
+      "request": {
+        "path": {
+          "id": "workflow item id"
+        }
+      },
+      "response": {
+        "count": 0,
+        "timeline": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/rules/transitions",
+      "purpose": "Return transition rules for statuses and actions.",
+      "request": {},
+      "response": {
+        "rules": "workflow_transition_rules_v0"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/ui/action-button-matrix",
+      "purpose": "Return UI button matrix for all statuses.",
+      "request": {},
+      "response": {
+        "matrix": "roadwork_action_button_matrix_v0"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/workflow/templates/universal-172",
+      "purpose": "Return the Universal 172-Step Repeatable Process template.",
+      "request": {},
+      "response": {
+        "template": "universal_172_process"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/workflow/templates/universal-172/instantiate",
+      "purpose": "Create a workflow item with 172 linked tasks from the Universal 172 template.",
+      "request": {
+        "body": {
+          "owner": "optional",
+          "source": "manual_or_agent_or_api",
+          "start_status": "default received",
+          "title": "required"
+        }
+      },
+      "response": {
+        "tasks_created": 172,
+        "workflow_item": "workflow_item"
+      }
+    }
+  ],
+  "generated_at_utc": "2026-05-20T17:14:04.059930+00:00",
+  "honesty_rules": [
+    "This is a planned API contract, not an implemented server.",
+    "Every state-changing POST must validate transition rules.",
+    "Receipt-required actions must produce receipt rows.",
+    "Do not expose secrets, tokens, source payloads, or private data by default.",
+    "All statuses must remain compatible with workflow_transition_rules_v0."
+  ],
+  "name": "RoadWork Workflow API Contract",
+  "purpose": "Define API routes for workflow items, actions, events, receipts, allowed actions, and Universal 172 templates.",
+  "status": "planned_api_contract",
+  "version": "0.1"
+}

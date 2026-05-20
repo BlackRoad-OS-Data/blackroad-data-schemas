@@ -1,0 +1,195 @@
+{
+  "awaiting_badges": {
+    "agent_output": "Agent output",
+    "credentials": "Credentials",
+    "customer_response": "Awaiting customer",
+    "data_access": "Data access",
+    "deployment_window": "Deploy window",
+    "external_vendor": "Awaiting vendor",
+    "internal_approval": "Awaiting approval",
+    "legal_review": "Legal review",
+    "parts_or_assets": "Assets needed",
+    "payment_or_billing": "Billing",
+    "security_review": "Security review"
+  },
+  "card_fields": [
+    "index_id",
+    "title",
+    "source",
+    "status",
+    "claimed_by",
+    "awaiting_type",
+    "due_at",
+    "receipt_count",
+    "task_progress"
+  ],
+  "detail_panels": [
+    "summary",
+    "actions",
+    "172_tasks",
+    "subtasks",
+    "awaiting",
+    "timeline",
+    "collaborators",
+    "events",
+    "receipts",
+    "source_payload"
+  ],
+  "generated_at_utc": "2026-05-20T17:10:48.756299+00:00",
+  "honesty_rules": [
+    "Do not show implemented status unless receipts/tests prove it.",
+    "Show initialized-shell when the repo or workflow only has structure.",
+    "Show partial when work exists but is not verified.",
+    "Show blocked when access, disk, permissions, or decisions stop progress.",
+    "Every major action should create an event or receipt."
+  ],
+  "name": "RoadWork UI State Spec",
+  "purpose": "Define RoadWork inbox, workflow board, actions, badges, detail panels, and receipt visibility.",
+  "receipt_panel": {
+    "fields": [
+      "receipt_id",
+      "receipt_type",
+      "actor",
+      "action",
+      "created_at",
+      "receipt_path",
+      "receipt_hash"
+    ],
+    "required_for_actions": [
+      "claim",
+      "start_work",
+      "set_awaiting",
+      "resolve_awaiting",
+      "complete",
+      "archive",
+      "reopen",
+      "resolve_blocker"
+    ]
+  },
+  "status": "planned_ui_spec",
+  "status_columns": {
+    "archived": {
+      "badge": "ARCHIVED",
+      "label": "Archived",
+      "meaning": "Removed from active work but recoverable.",
+      "primary_actions": [
+        "restore"
+      ]
+    },
+    "awaiting": {
+      "badge": "AWAITING",
+      "label": "Awaiting",
+      "meaning": "Work is paused for a typed reason.",
+      "primary_actions": [
+        "resolve_awaiting",
+        "escalate",
+        "reassign",
+        "cancel"
+      ]
+    },
+    "blocked": {
+      "badge": "BLOCKED",
+      "label": "Blocked",
+      "meaning": "Work cannot proceed without a blocker being resolved.",
+      "primary_actions": [
+        "resolve_blocker",
+        "set_awaiting",
+        "close"
+      ]
+    },
+    "collaborating": {
+      "badge": "COLLAB",
+      "label": "Collaborating",
+      "meaning": "Multiple humans or agents are involved.",
+      "primary_actions": [
+        "update_progress",
+        "set_awaiting",
+        "complete",
+        "block"
+      ]
+    },
+    "done": {
+      "badge": "DONE",
+      "label": "Done",
+      "meaning": "Work completed or closed.",
+      "primary_actions": [
+        "reopen",
+        "archive"
+      ]
+    },
+    "in_progress": {
+      "badge": "ACTIVE",
+      "label": "In Progress",
+      "meaning": "Work is actively moving.",
+      "primary_actions": [
+        "update_progress",
+        "set_awaiting",
+        "collaborate",
+        "complete",
+        "block"
+      ]
+    },
+    "received": {
+      "badge": "NEW",
+      "label": "New / Received",
+      "meaning": "Item entered the system but is not owned yet.",
+      "primary_actions": [
+        "mark_read",
+        "claim",
+        "close",
+        "escalate"
+      ]
+    },
+    "triaged": {
+      "badge": "TRIAGED",
+      "label": "Triaged",
+      "meaning": "Item has been read/claimed and is ready to start.",
+      "primary_actions": [
+        "start_work",
+        "set_awaiting",
+        "collaborate",
+        "close",
+        "escalate"
+      ]
+    }
+  },
+  "version": "0.1",
+  "views": [
+    {
+      "default_filters": [
+        "status:received",
+        "status:triaged",
+        "status:awaiting",
+        "status:blocked"
+      ],
+      "description": "Everything received from RoadWire, OneWay, forms, APIs, agents, or manual entry.",
+      "id": "inbox",
+      "name": "Inbox"
+    },
+    {
+      "columns": [
+        "received",
+        "triaged",
+        "in_progress",
+        "awaiting",
+        "collaborating",
+        "blocked",
+        "done",
+        "archived"
+      ],
+      "description": "Kanban-style view grouped by workflow status.",
+      "id": "board",
+      "name": "Workflow Board"
+    },
+    {
+      "description": "SLA, due date, escalation, awaiting, and receipt timeline.",
+      "id": "timeline",
+      "name": "Timeline"
+    },
+    {
+      "description": "Universal 172-step repeatable process as linked tasks.",
+      "id": "process",
+      "name": "172-Step Process"
+    }
+  ]
+}

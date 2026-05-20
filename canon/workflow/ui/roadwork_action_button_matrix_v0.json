@@ -1,0 +1,360 @@
+{
+  "buttons_by_status": {
+    "archived": [
+      {
+        "action": "restore",
+        "enabled_when": [
+          "workflow.status == 'archived'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "archived",
+        "kind": "primary",
+        "label": "Restore",
+        "requires_receipt": false,
+        "to_status": "done"
+      }
+    ],
+    "awaiting": [
+      {
+        "action": "resolve_awaiting",
+        "enabled_when": [
+          "workflow.status == 'awaiting'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "awaiting",
+        "kind": "primary",
+        "label": "Resolve Awaiting",
+        "requires_receipt": true,
+        "to_status": "in_progress"
+      },
+      {
+        "action": "escalate",
+        "enabled_when": [
+          "workflow.status == 'awaiting'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "awaiting",
+        "kind": "warning",
+        "label": "Escalate",
+        "requires_receipt": false,
+        "to_status": "blocked"
+      },
+      {
+        "action": "reassign",
+        "enabled_when": [
+          "workflow.status == 'awaiting'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "awaiting",
+        "kind": "secondary",
+        "label": "Reassign",
+        "requires_receipt": false,
+        "to_status": "awaiting"
+      },
+      {
+        "action": "cancel",
+        "enabled_when": [
+          "workflow.status == 'awaiting'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "awaiting",
+        "kind": "danger",
+        "label": "Cancel",
+        "requires_receipt": false,
+        "to_status": "done"
+      }
+    ],
+    "blocked": [
+      {
+        "action": "resolve_blocker",
+        "enabled_when": [
+          "workflow.status == 'blocked'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "blocked",
+        "kind": "primary",
+        "label": "Resolve Blocker",
+        "requires_receipt": true,
+        "to_status": "in_progress"
+      },
+      {
+        "action": "set_awaiting",
+        "enabled_when": [
+          "workflow.status == 'blocked'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "blocked",
+        "kind": "warning",
+        "label": "Set Awaiting",
+        "requires_receipt": true,
+        "to_status": "awaiting"
+      },
+      {
+        "action": "close",
+        "enabled_when": [
+          "workflow.status == 'blocked'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "blocked",
+        "kind": "danger",
+        "label": "Close",
+        "requires_receipt": false,
+        "to_status": "done"
+      }
+    ],
+    "collaborating": [
+      {
+        "action": "update_progress",
+        "enabled_when": [
+          "workflow.status == 'collaborating'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "collaborating",
+        "kind": "secondary",
+        "label": "Update Progress",
+        "requires_receipt": false,
+        "to_status": "collaborating"
+      },
+      {
+        "action": "set_awaiting",
+        "enabled_when": [
+          "workflow.status == 'collaborating'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "collaborating",
+        "kind": "warning",
+        "label": "Set Awaiting",
+        "requires_receipt": true,
+        "to_status": "awaiting"
+      },
+      {
+        "action": "complete",
+        "enabled_when": [
+          "workflow.status == 'collaborating'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "collaborating",
+        "kind": "success",
+        "label": "Complete",
+        "requires_receipt": true,
+        "to_status": "done"
+      },
+      {
+        "action": "block",
+        "enabled_when": [
+          "workflow.status == 'collaborating'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "collaborating",
+        "kind": "danger",
+        "label": "Block",
+        "requires_receipt": false,
+        "to_status": "blocked"
+      }
+    ],
+    "done": [
+      {
+        "action": "reopen",
+        "enabled_when": [
+          "workflow.status == 'done'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "done",
+        "kind": "warning",
+        "label": "Reopen",
+        "requires_receipt": true,
+        "to_status": "in_progress"
+      },
+      {
+        "action": "archive",
+        "enabled_when": [
+          "workflow.status == 'done'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "done",
+        "kind": "secondary",
+        "label": "Archive",
+        "requires_receipt": true,
+        "to_status": "archived"
+      }
+    ],
+    "in_progress": [
+      {
+        "action": "update_progress",
+        "enabled_when": [
+          "workflow.status == 'in_progress'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "in_progress",
+        "kind": "secondary",
+        "label": "Update Progress",
+        "requires_receipt": false,
+        "to_status": "in_progress"
+      },
+      {
+        "action": "set_awaiting",
+        "enabled_when": [
+          "workflow.status == 'in_progress'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "in_progress",
+        "kind": "warning",
+        "label": "Set Awaiting",
+        "requires_receipt": true,
+        "to_status": "awaiting"
+      },
+      {
+        "action": "collaborate",
+        "enabled_when": [
+          "workflow.status == 'in_progress'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "in_progress",
+        "kind": "secondary",
+        "label": "Collaborate",
+        "requires_receipt": false,
+        "to_status": "collaborating"
+      },
+      {
+        "action": "complete",
+        "enabled_when": [
+          "workflow.status == 'in_progress'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "in_progress",
+        "kind": "success",
+        "label": "Complete",
+        "requires_receipt": true,
+        "to_status": "done"
+      },
+      {
+        "action": "block",
+        "enabled_when": [
+          "workflow.status == 'in_progress'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "in_progress",
+        "kind": "danger",
+        "label": "Block",
+        "requires_receipt": false,
+        "to_status": "blocked"
+      }
+    ],
+    "received": [
+      {
+        "action": "mark_read",
+        "enabled_when": [
+          "workflow.status == 'received'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "received",
+        "kind": "secondary",
+        "label": "Mark Read",
+        "requires_receipt": false,
+        "to_status": "triaged"
+      },
+      {
+        "action": "claim",
+        "enabled_when": [
+          "workflow.status == 'received'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "received",
+        "kind": "primary",
+        "label": "Claim",
+        "requires_receipt": true,
+        "to_status": "triaged"
+      },
+      {
+        "action": "close",
+        "enabled_when": [
+          "workflow.status == 'received'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "received",
+        "kind": "danger",
+        "label": "Close",
+        "requires_receipt": false,
+        "to_status": "done"
+      },
+      {
+        "action": "escalate",
+        "enabled_when": [
+          "workflow.status == 'received'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "received",
+        "kind": "warning",
+        "label": "Escalate",
+        "requires_receipt": false,
+        "to_status": "blocked"
+      }
+    ],
+    "triaged": [
+      {
+        "action": "start_work",
+        "enabled_when": [
+          "workflow.status == 'triaged'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "triaged",
+        "kind": "primary",
+        "label": "Start Work",
+        "requires_receipt": true,
+        "to_status": "in_progress"
+      },
+      {
+        "action": "set_awaiting",
+        "enabled_when": [
+          "workflow.status == 'triaged'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "triaged",
+        "kind": "warning",
+        "label": "Set Awaiting",
+        "requires_receipt": true,
+        "to_status": "awaiting"
+      },
+      {
+        "action": "collaborate",
+        "enabled_when": [
+          "workflow.status == 'triaged'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "triaged",
+        "kind": "secondary",
+        "label": "Collaborate",
+        "requires_receipt": false,
+        "to_status": "collaborating"
+      },
+      {
+        "action": "close",
+        "enabled_when": [
+          "workflow.status == 'triaged'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "triaged",
+        "kind": "danger",
+        "label": "Close",
+        "requires_receipt": false,
+        "to_status": "done"
+      },
+      {
+        "action": "escalate",
+        "enabled_when": [
+          "workflow.status == 'triaged'",
+          "user_or_agent_has_permission == true"
+        ],
+        "from_status": "triaged",
+        "kind": "warning",
+        "label": "Escalate",
+        "requires_receipt": false,
+        "to_status": "blocked"
+      }
+    ]
+  },
+  "generated_at_utc": "2026-05-20T17:11:57.744594+00:00",
+  "name": "RoadWork Action Button Matrix",
+  "status": "planned_ui_action_matrix",
+  "version": "0.1"
+}

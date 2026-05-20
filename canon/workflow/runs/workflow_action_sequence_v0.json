@@ -1,0 +1,240 @@
+{
+  "actions": [
+    {
+      "action_type": "claim",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552286+00:00",
+      "error": "",
+      "id": "act_workflow_runner_v0_01",
+      "metadata_json": "{\"claimed_by\": \"alexandria\"}",
+      "receipt_id": "rcpt_workflow_runner_v0_01",
+      "result": "ok",
+      "status_after": "triaged",
+      "status_before": "received",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action_type": "start_work",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552550+00:00",
+      "error": "",
+      "id": "act_workflow_runner_v0_02",
+      "metadata_json": "{}",
+      "receipt_id": "rcpt_workflow_runner_v0_02",
+      "result": "ok",
+      "status_after": "in_progress",
+      "status_before": "triaged",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action_type": "set_awaiting",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552576+00:00",
+      "error": "",
+      "id": "act_workflow_runner_v0_03",
+      "metadata_json": "{\"awaiting_note\": \"Approve next phase before generating repo/project issues.\", \"awaiting_owner\": \"alexandria\", \"awaiting_type\": \"operator_approval\"}",
+      "receipt_id": "rcpt_workflow_runner_v0_03",
+      "result": "ok",
+      "status_after": "awaiting",
+      "status_before": "in_progress",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action_type": "resolve_awaiting",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552653+00:00",
+      "error": "",
+      "id": "act_workflow_runner_v0_04",
+      "metadata_json": "{}",
+      "receipt_id": "rcpt_workflow_runner_v0_04",
+      "result": "ok",
+      "status_after": "in_progress",
+      "status_before": "awaiting",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action_type": "complete",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552692+00:00",
+      "error": "",
+      "id": "act_workflow_runner_v0_05",
+      "metadata_json": "{}",
+      "receipt_id": "rcpt_workflow_runner_v0_05",
+      "result": "ok",
+      "status_after": "done",
+      "status_before": "in_progress",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    }
+  ],
+  "counts": {
+    "workflow_actions": 5,
+    "workflow_awaiting_log": 1,
+    "workflow_events": 5,
+    "workflow_items": 1,
+    "workflow_receipts": 5,
+    "workflow_tasks": 172
+  },
+  "db_path": "/Users/alexa/blackroad/orgs/reports/tmp/roadwork_action_runner_v0.sqlite",
+  "events": [
+    {
+      "actor": "alexandria",
+      "after_status": "triaged",
+      "before_status": "received",
+      "created_at": "2026-05-20T17:09:07.552286+00:00",
+      "event_type": "claim",
+      "id": "evt_workflow_runner_v0_01",
+      "metadata_json": "{\"claimed_by\": \"alexandria\"}",
+      "note": "Operator claimed workflow item.",
+      "receipt_id": "rcpt_workflow_runner_v0_01",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "in_progress",
+      "before_status": "triaged",
+      "created_at": "2026-05-20T17:09:07.552550+00:00",
+      "event_type": "start_work",
+      "id": "evt_workflow_runner_v0_02",
+      "metadata_json": "{}",
+      "note": "Operator started workflow work.",
+      "receipt_id": "rcpt_workflow_runner_v0_02",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "awaiting",
+      "before_status": "in_progress",
+      "created_at": "2026-05-20T17:09:07.552576+00:00",
+      "event_type": "set_awaiting",
+      "id": "evt_workflow_runner_v0_03",
+      "metadata_json": "{\"awaiting_note\": \"Approve next phase before generating repo/project issues.\", \"awaiting_owner\": \"alexandria\", \"awaiting_type\": \"operator_approval\"}",
+      "note": "Workflow is awaiting operator approval for next execution phase.",
+      "receipt_id": "rcpt_workflow_runner_v0_03",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "in_progress",
+      "before_status": "awaiting",
+      "created_at": "2026-05-20T17:09:07.552653+00:00",
+      "event_type": "resolve_awaiting",
+      "id": "evt_workflow_runner_v0_04",
+      "metadata_json": "{}",
+      "note": "Operator approval received.",
+      "receipt_id": "rcpt_workflow_runner_v0_04",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "actor": "alexandria",
+      "after_status": "done",
+      "before_status": "in_progress",
+      "created_at": "2026-05-20T17:09:07.552692+00:00",
+      "event_type": "complete",
+      "id": "evt_workflow_runner_v0_05",
+      "metadata_json": "{}",
+      "note": "Sample transition sequence completed.",
+      "receipt_id": "rcpt_workflow_runner_v0_05",
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    }
+  ],
+  "final_status": "done",
+  "generated_at_utc": "2026-05-20T17:09:07.553289+00:00",
+  "index_id": "WF-2026-0520-0001",
+  "initial_status": "received",
+  "receipts": [
+    {
+      "action": "claim",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552286+00:00",
+      "id": "rcpt_workflow_runner_v0_01",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "start_work",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552550+00:00",
+      "id": "rcpt_workflow_runner_v0_02",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "set_awaiting",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552576+00:00",
+      "id": "rcpt_workflow_runner_v0_03",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "resolve_awaiting",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552653+00:00",
+      "id": "rcpt_workflow_runner_v0_04",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    },
+    {
+      "action": "complete",
+      "actor": "alexandria",
+      "created_at": "2026-05-20T17:09:07.552692+00:00",
+      "id": "rcpt_workflow_runner_v0_05",
+      "receipt_hash": "",
+      "receipt_path": "/Users/alexa/blackroad/orgs/reports/workflow-action-runner-v0-receipt-20260520.md",
+      "receipt_type": "workflow_transition",
+      "task_id": null,
+      "workflow_item_id": "wf_universal_172_sample_20260520"
+    }
+  ],
+  "sequence": [
+    {
+      "action": "claim",
+      "actor": "alexandria",
+      "metadata": {
+        "claimed_by": "alexandria"
+      },
+      "note": "Operator claimed workflow item."
+    },
+    {
+      "action": "start_work",
+      "actor": "alexandria",
+      "metadata": {},
+      "note": "Operator started workflow work."
+    },
+    {
+      "action": "set_awaiting",
+      "actor": "alexandria",
+      "metadata": {
+        "awaiting_note": "Approve next phase before generating repo/project issues.",
+        "awaiting_owner": "alexandria",
+        "awaiting_type": "operator_approval"
+      },
+      "note": "Workflow is awaiting operator approval for next execution phase."
+    },
+    {
+      "action": "resolve_awaiting",
+      "actor": "alexandria",
+      "metadata": {},
+      "note": "Operator approval received."
+    },
+    {
+      "action": "complete",
+      "actor": "alexandria",
+      "metadata": {},
+      "note": "Sample transition sequence completed."
+    }
+  ],
+  "workflow_item_id": "wf_universal_172_sample_20260520"
+}
