@@ -47,6 +47,23 @@
     .road-dragging {
       opacity: .45;
     }
+  
+    .dock-drop-target {
+      outline: 4px dashed #111;
+      background: #f7f7f7;
+    }
+
+    #road-dock-storage {
+      border: 1px solid #333;
+      padding: 10px;
+      margin-top: 10px;
+      background: #f7f7f7;
+    }
+
+    .stored-window-button {
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
   </style>
 </head>
 <body>
@@ -54,7 +71,7 @@
   <div class="truth">
     <strong><span class="mock">LOCAL MOCK PROOF.</span></strong>
     No Gmail. No real send. No external API. No secrets. No production claim.
-    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots.
+    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore.
   </div>
 
   <section id="local-state-controls">
@@ -83,6 +100,12 @@
   <div class="dock">
     <button id="dock-9">9<br>Memory</button><button id="dock-10">10<br>Reasoning</button><button id="dock-11">11<br>Coding</button><button id="dock-12">12<br>Tools</button><button id="dock-13">13<br>Workflow</button><button id="dock-14">14<br>Search</button><button id="dock-15">15<br>Data</button><button id="dock-16">16<br>Comms</button><button id="dock-17">17<br>Vision</button><button id="dock-18">18<br>Security</button><button id="dock-19">19<br>Deploy</button><button id="dock-20">20<br>Home</button>
   </div>
+
+<section id="road-dock-storage">
+    <h2>Stored Windows / Dock Return</h2>
+    <p><strong>MOCK dock storage.</strong> Drag any active slot to dock slots 9–20 to store it here. Click a stored window to restore it.</p>
+    <div id="storedWindows"></div>
+  </section>
 
 <script>
 const now = () => new Date().toISOString();
@@ -370,6 +393,77 @@ function setupRoadDragSwap() {
   });
 }
 
+
+function storeRoadSlot(section) {
+  if (!section) return;
+
+  section.style.display = "none";
+
+  const stored = document.getElementById("storedWindows");
+  const existing = stored.querySelector(`[data-restore-slot="${section.id}"]`);
+
+  if (!existing) {
+    const btn = document.createElement("button");
+    btn.className = "stored-window-button";
+    btn.dataset.restoreSlot = section.id;
+    btn.textContent = "Restore " + section.id;
+    btn.onclick = () => restoreStoredSlot(section.id);
+    stored.appendChild(btn);
+  }
+
+  receipt("dock_store_window_mock", "Stored " + section.id + " back to dock storage.");
+}
+
+function restoreStoredSlot(slotId) {
+  const section = document.getElementById(slotId);
+  if (!section) return;
+
+  section.style.display = "";
+
+  const stored = document.getElementById("storedWindows");
+  const btn = stored.querySelector(`[data-restore-slot="${slotId}"]`);
+  if (btn) btn.remove();
+
+  receipt("dock_restore_window_mock", "Restored " + slotId + " from dock storage.");
+}
+
+function setupDockStorage() {
+  const dockTargets = document.querySelectorAll(".dock button, #road-dock-storage");
+
+  dockTargets.forEach(target => {
+    if (target.dataset.dockDropBound === "true") return;
+    target.dataset.dockDropBound = "true";
+
+    target.addEventListener("dragover", event => {
+      event.preventDefault();
+      if (draggedRoadSlot) {
+        target.classList.add("dock-drop-target");
+        event.dataTransfer.dropEffect = "move";
+      }
+    });
+
+    target.addEventListener("dragleave", () => {
+      target.classList.remove("dock-drop-target");
+    });
+
+    target.addEventListener("drop", event => {
+      event.preventDefault();
+      target.classList.remove("dock-drop-target");
+
+      if (!draggedRoadSlot) return;
+
+      storeRoadSlot(draggedRoadSlot);
+      draggedRoadSlot.classList.remove("road-dragging");
+      draggedRoadSlot = null;
+
+      document.querySelectorAll(".road-drag-over, .dock-drop-target").forEach(el => {
+        el.classList.remove("road-drag-over");
+        el.classList.remove("dock-drop-target");
+      });
+    });
+  });
+}
+
 function setupWindowBehavior() {
   document.querySelectorAll(".grid section").forEach(section => {
     if (section.dataset.roadBound === "true") return;
@@ -429,6 +523,7 @@ function render() {
   document.getElementById("receipts").textContent = state.receipts.length ? JSON.stringify(state.receipts, null, 2) : "No receipts yet.";
   setupWindowBehavior();
   setupRoadDragSwap();
+  setupDockStorage();
 }
 
 render();
