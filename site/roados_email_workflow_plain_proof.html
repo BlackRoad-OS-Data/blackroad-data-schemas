@@ -71,7 +71,7 @@
   <div class="truth">
     <strong><span class="mock">LOCAL MOCK PROOF.</span></strong>
     No Gmail. No real send. No external API. No secrets. No production claim.
-    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore.
+    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore. Layout saves to localStorage and restores after refresh.
   </div>
 
   <section id="local-state-controls">
@@ -135,7 +135,12 @@ let state = {
       workflow: { index_id: "WF-2026-0520-0002", status: "received", claimed_by: "", awaiting_type: "", tasks: [] }
     }
   ],
-  receipts: []
+  receipts: [],
+  layout: {
+    slot_order: ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"],
+    stored_slots: [],
+    updated_at: null
+  }
 };
 
 function saveState() {
@@ -184,6 +189,76 @@ function importState() {
 function resetLocalState() {
   localStorage.removeItem(STORAGE_KEY);
   receipt("reset_local_state_mock", "Removed saved localStorage state. Reload page to return to default seed.");
+}
+
+function ensureLayoutState() {
+  if (!state.layout) {
+    state.layout = {
+      slot_order: ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"],
+      stored_slots: [],
+      updated_at: null
+    };
+  }
+
+  if (!Array.isArray(state.layout.slot_order) || state.layout.slot_order.length !== 8) {
+    state.layout.slot_order = ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"];
+  }
+
+  if (!Array.isArray(state.layout.stored_slots)) {
+    state.layout.stored_slots = [];
+  }
+}
+
+function recordLayoutState() {
+  ensureLayoutState();
+
+  const grid = document.querySelector(".grid");
+  if (grid) {
+    state.layout.slot_order = Array.from(grid.querySelectorAll("section[id^='slot-']")).map(el => el.id);
+  }
+
+  const stored = document.getElementById("storedWindows");
+  if (stored) {
+    state.layout.stored_slots = Array.from(stored.querySelectorAll("[data-restore-slot]")).map(el => el.dataset.restoreSlot);
+  }
+
+  state.layout.updated_at = now();
+  saveState();
+}
+
+function applyLayoutState() {
+  ensureLayoutState();
+
+  const grid = document.querySelector(".grid");
+  const stored = document.getElementById("storedWindows");
+
+  if (grid) {
+    state.layout.slot_order.forEach(slotId => {
+      const section = document.getElementById(slotId);
+      if (section && section.parentNode === grid) {
+        grid.appendChild(section);
+      }
+    });
+  }
+
+  document.querySelectorAll(".grid section[id^='slot-']").forEach(section => {
+    section.style.display = state.layout.stored_slots.includes(section.id) ? "none" : "";
+  });
+
+  if (stored) {
+    stored.innerHTML = "";
+    state.layout.stored_slots.forEach(slotId => {
+      const section = document.getElementById(slotId);
+      if (!section) return;
+
+      const btn = document.createElement("button");
+      btn.className = "stored-window-button";
+      btn.dataset.restoreSlot = slotId;
+      btn.textContent = "Restore " + slotId;
+      btn.onclick = () => restoreStoredSlot(slotId);
+      stored.appendChild(btn);
+    });
+  }
 }
 
 function selectedEmail() {
@@ -280,6 +355,7 @@ function giveAgentContext() {
 }
 
 loadState();
+ensureLayoutState();
 
 
 function restoreExpanded() {
@@ -342,6 +418,8 @@ function swapRoadSlots(a, b) {
 
   aMarker.remove();
   bMarker.remove();
+
+  recordLayoutState();
 
   receipt("swap_road_slots_mock", "Swapped " + a.id + " with " + b.id + " by drag/drop.");
 }
@@ -411,6 +489,8 @@ function storeRoadSlot(section) {
     stored.appendChild(btn);
   }
 
+  recordLayoutState();
+
   receipt("dock_store_window_mock", "Stored " + section.id + " back to dock storage.");
 }
 
@@ -423,6 +503,8 @@ function restoreStoredSlot(slotId) {
   const stored = document.getElementById("storedWindows");
   const btn = stored.querySelector(`[data-restore-slot="${slotId}"]`);
   if (btn) btn.remove();
+
+  recordLayoutState();
 
   receipt("dock_restore_window_mock", "Restored " + slotId + " from dock storage.");
 }
@@ -524,6 +606,7 @@ function render() {
   setupWindowBehavior();
   setupRoadDragSwap();
   setupDockStorage();
+  applyLayoutState();
 }
 
 render();
