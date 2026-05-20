@@ -27,6 +27,10 @@ case "$CMD" in
   log)
     git -C "$ROOT" log --oneline -5
     ;;
+  report)
+    python3 "$ROOT/tools/roados_email_workflow_report.py"
+    ;;
+
   doctor)
     echo "=== RoadOS Doctor ==="
     echo ""
@@ -86,6 +90,7 @@ Commands:
   ./roados status      Git status
   ./roados log         Recent commits
   ./roados doctor      Check + git status + PR status
+  ./roados report      Write markdown/json proof status report
 
 Still local proof only:
   no Gmail

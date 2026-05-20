@@ -1,0 +1,43 @@
+{
+  "branch": "roados-email-workflow-proof",
+  "check_ok": true,
+  "commit": "2d696c5",
+  "dirty": true,
+  "features": [
+    "8 RoadOS work slots",
+    "dock slots 9\u201320",
+    "email/thread/compose/workflow panels",
+    "mock receipts/event history",
+    "claim/start/awaiting/done transitions",
+    "draft reply/create task/mock AI actions",
+    "localStorage persistence",
+    "window focus/expand/restore",
+    "drag/drop swap road spots",
+    "dock store/restore",
+    "persistent layout state",
+    "workspace presets",
+    "workspace package import/export",
+    "local search",
+    "inbox filter/sort",
+    "terminal check/doctor/control commands"
+  ],
+  "generated_at_utc": "2026-05-20T21:23:49.678574+00:00",
+  "honesty": [
+    "No Gmail connected",
+    "No real send",
+    "No external API",
+    "No backend",
+    "No secrets",
+    "No production RoadOS/RoadWork claim",
+    "Local browser-state proof only"
+  ],
+  "pr": {
+    "baseRefName": "blackroad-lab",
+    "headRefName": "roados-email-workflow-proof",
+    "isDraft": true,
+    "number": 7,
+    "title": "Add RoadOS email workflow plain proof",
+    "url": "https://github.com/BlackRoad-OS-Data/blackroad-data-schemas/pull/7"
+  },
+  "repo": "BlackRoad-OS-Data/blackroad-data-schemas"
+}
