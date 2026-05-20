@@ -1,0 +1,70 @@
+{
+  "name": "BlackRoad Workflow Transition Rules",
+  "version": "0.1",
+  "statuses": [
+    "received",
+    "triaged",
+    "in_progress",
+    "awaiting",
+    "collaborating",
+    "blocked",
+    "done",
+    "archived"
+  ],
+  "actions": {
+    "received": {
+      "mark_read": "triaged",
+      "claim": "triaged",
+      "close": "done",
+      "escalate": "blocked"
+    },
+    "triaged": {
+      "start_work": "in_progress",
+      "set_awaiting": "awaiting",
+      "collaborate": "collaborating",
+      "close": "done",
+      "escalate": "blocked"
+    },
+    "in_progress": {
+      "update_progress": "in_progress",
+      "set_awaiting": "awaiting",
+      "collaborate": "collaborating",
+      "complete": "done",
+      "block": "blocked"
+    },
+    "awaiting": {
+      "resolve_awaiting": "in_progress",
+      "escalate": "blocked",
+      "reassign": "awaiting",
+      "cancel": "done"
+    },
+    "collaborating": {
+      "update_progress": "collaborating",
+      "set_awaiting": "awaiting",
+      "complete": "done",
+      "block": "blocked"
+    },
+    "blocked": {
+      "resolve_blocker": "in_progress",
+      "set_awaiting": "awaiting",
+      "close": "done"
+    },
+    "done": {
+      "reopen": "in_progress",
+      "archive": "archived"
+    },
+    "archived": {
+      "restore": "done"
+    }
+  },
+  "receipt_required_actions": [
+    "claim",
+    "start_work",
+    "set_awaiting",
+    "resolve_awaiting",
+    "complete",
+    "archive",
+    "reopen",
+    "resolve_blocker"
+  ]
+}

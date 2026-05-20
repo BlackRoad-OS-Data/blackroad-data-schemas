@@ -1,0 +1,4320 @@
+{
+  "blackroad_products": [
+    "RoadWork",
+    "RoadMap",
+    "RoadTrip",
+    "RoadChain",
+    "CarKeys",
+    "OneWay",
+    "RoadWire"
+  ],
+  "expected_step_count": 172,
+  "generated_at_utc": "2026-05-20T17:00:37.713854+00:00",
+  "macro_count": 27,
+  "name": "Universal 172-Step Repeatable Process",
+  "status": "canon_template",
+  "step_count": 172,
+  "steps": [
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 1,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-001",
+      "step_number": 1,
+      "title": "Brainstorm 10+ possible topics without filtering."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 2,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-002",
+      "step_number": 2,
+      "title": "Research current trends and real-world relevance of each."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 3,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-003",
+      "step_number": 3,
+      "title": "Score each topic for alignment with your goals and values."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 4,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-004",
+      "step_number": 4,
+      "title": "Assess feasibility including time, budget, skills, and resources."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 5,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-005",
+      "step_number": 5,
+      "title": "Rank the top 5 topics by potential impact versus effort."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 6,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-006",
+      "step_number": 6,
+      "title": "Select the single primary topic."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 7,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-007",
+      "step_number": 7,
+      "title": "Write a one-paragraph description of the chosen topic."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 1,
+      "macro_step_number": 8,
+      "macro_title": "Identify the Topic or Area of Interest",
+      "step_id": "U172-008",
+      "step_number": 8,
+      "title": "Get quick validation from 1\u20132 trusted people."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 1,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-009",
+      "step_number": 9,
+      "title": "Break the topic into 3\u20135 sub-problems."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 2,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-010",
+      "step_number": 10,
+      "title": "Turn each sub-problem into a clear, testable question."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 3,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-011",
+      "step_number": 11,
+      "title": "Choose the single most important question to solve first."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 4,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-012",
+      "step_number": 12,
+      "title": "Add measurable success criteria to the question."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 5,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-013",
+      "step_number": 13,
+      "title": "Rewrite it in precise How or What effect form."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 6,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-014",
+      "step_number": 14,
+      "title": "Check that it is solvable within your constraints."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 7,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-015",
+      "step_number": 15,
+      "title": "Validate the final question with a quick stakeholder review."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 2,
+      "macro_step_number": 8,
+      "macro_title": "Formulate the Specific Question or Problem Statement",
+      "step_id": "U172-016",
+      "step_number": 16,
+      "title": "Lock the core question in writing."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 1,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-017",
+      "step_number": 17,
+      "title": "Search academic, industry, and competitor sources."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 2,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-018",
+      "step_number": 18,
+      "title": "Interview 3\u20135 subject-matter experts or users."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 3,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-019",
+      "step_number": 19,
+      "title": "Collect quantitative data and statistics."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 4,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-020",
+      "step_number": 20,
+      "title": "Identify gaps in existing knowledge."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 5,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-021",
+      "step_number": 21,
+      "title": "Summarize key findings in a one-page brief."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 6,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-022",
+      "step_number": 22,
+      "title": "Note any biases or limitations in the data."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 7,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-023",
+      "step_number": 23,
+      "title": "Create a known versus unknown matrix."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 3,
+      "macro_step_number": 8,
+      "macro_title": "Conduct Preliminary Research and Background Gathering",
+      "step_id": "U172-024",
+      "step_number": 24,
+      "title": "Update your question if new information requires it."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 1,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-025",
+      "step_number": 25,
+      "title": "List everything that is explicitly in scope."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 2,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-026",
+      "step_number": 26,
+      "title": "List everything that is explicitly out of scope."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 3,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-027",
+      "step_number": 27,
+      "title": "Define 3\u20135 measurable objectives."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 4,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-028",
+      "step_number": 28,
+      "title": "Set hard boundaries for time, budget, geography, and audience."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 5,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-029",
+      "step_number": 29,
+      "title": "Create a one-page scope statement."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 6,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-030",
+      "step_number": 30,
+      "title": "Identify any scope creep risks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 7,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-031",
+      "step_number": 31,
+      "title": "Get formal sign-off from stakeholders."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 4,
+      "macro_step_number": 8,
+      "macro_title": "Define Scope, Objectives, and Boundaries",
+      "step_id": "U172-032",
+      "step_number": 32,
+      "title": "Publish the approved scope document."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 1,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-033",
+      "step_number": 33,
+      "title": "List all required human resources and roles."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 2,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-034",
+      "step_number": 34,
+      "title": "Identify external vendors or partners needed."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 3,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-035",
+      "step_number": 35,
+      "title": "Map all key stakeholders and their influence or interest."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 4,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-036",
+      "step_number": 36,
+      "title": "Assign RACI responsibilities."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 5,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-037",
+      "step_number": 37,
+      "title": "Secure budget and material resources."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 6,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-038",
+      "step_number": 38,
+      "title": "Confirm availability of each team member."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 7,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-039",
+      "step_number": 39,
+      "title": "Create a stakeholder communication matrix."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 5,
+      "macro_step_number": 8,
+      "macro_title": "Identify Resources, Stakeholders, and Team",
+      "step_id": "U172-040",
+      "step_number": 40,
+      "title": "Hold a kickoff meeting to align everyone."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 1,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-041",
+      "step_number": 41,
+      "title": "Break the project into 5\u20137 major milestones."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 2,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-042",
+      "step_number": 42,
+      "title": "Define the exact deliverable for each milestone."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 3,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-043",
+      "step_number": 43,
+      "title": "Set 4\u20136 primary KPIs with target numbers."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 4,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-044",
+      "step_number": 44,
+      "title": "Create secondary leading indicators."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 5,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-045",
+      "step_number": 45,
+      "title": "Build a simple dashboard template."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 6,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-046",
+      "step_number": 46,
+      "title": "Set milestone review dates on the calendar."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 6,
+      "macro_step_number": 7,
+      "macro_title": "Establish Milestones, Deliverables, and Success Metrics",
+      "step_id": "U172-047",
+      "step_number": 47,
+      "title": "Get stakeholder approval on the KPI set."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 1,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-048",
+      "step_number": 48,
+      "title": "List every task required to reach each milestone."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 2,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-049",
+      "step_number": 49,
+      "title": "Estimate time for each task using optimistic, realistic, and pessimistic ranges."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 3,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-050",
+      "step_number": 50,
+      "title": "Identify dependencies between tasks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 4,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-051",
+      "step_number": 51,
+      "title": "Build a Gantt-style timeline or Kanban board."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 5,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-052",
+      "step_number": 52,
+      "title": "Add buffer time for known risks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 6,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-053",
+      "step_number": 53,
+      "title": "Assign owners and deadlines to every task."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 7,
+      "macro_step_number": 7,
+      "macro_title": "Develop Detailed Schedule and Timeline",
+      "step_id": "U172-054",
+      "step_number": 54,
+      "title": "Publish the final schedule and get buy-in."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 1,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-055",
+      "step_number": 55,
+      "title": "Decide frequency and format of status updates."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 2,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-056",
+      "step_number": 56,
+      "title": "Choose primary collaboration tools."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 3,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-057",
+      "step_number": 57,
+      "title": "Set meeting cadence."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 4,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-058",
+      "step_number": 58,
+      "title": "Define escalation paths for blockers."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 5,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-059",
+      "step_number": 59,
+      "title": "Create a shared project repository."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 6,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-060",
+      "step_number": 60,
+      "title": "Schedule recurring stakeholder update calls."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 8,
+      "macro_step_number": 7,
+      "macro_title": "Create Communication and Collaboration Plan",
+      "step_id": "U172-061",
+      "step_number": 61,
+      "title": "Document the full communication plan."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 1,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-062",
+      "step_number": 62,
+      "title": "Brainstorm 20+ potential risks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 2,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-063",
+      "step_number": 63,
+      "title": "Score each risk by likelihood and impact."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 3,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-064",
+      "step_number": 64,
+      "title": "Prioritize the top 8\u201310 risks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 4,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-065",
+      "step_number": 65,
+      "title": "Create mitigation or contingency plans for each."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 5,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-066",
+      "step_number": 66,
+      "title": "Assign risk owners."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 6,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-067",
+      "step_number": 67,
+      "title": "Build a risk register with triggers and responses."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 9,
+      "macro_step_number": 7,
+      "macro_title": "Perform Risk Assessment and Mitigation Planning",
+      "step_id": "U172-068",
+      "step_number": 68,
+      "title": "Review and update the risk register weekly."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 1,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-069",
+      "step_number": 69,
+      "title": "State your hypothesis in clear If then because form."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 2,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-070",
+      "step_number": 70,
+      "title": "List the key assumptions behind the hypothesis."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 3,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-071",
+      "step_number": 71,
+      "title": "Identify what would disprove the hypothesis."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 4,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-072",
+      "step_number": 72,
+      "title": "Design the minimal viable test of the hypothesis."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 5,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-073",
+      "step_number": 73,
+      "title": "Document expected outcomes and success thresholds."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 6,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-074",
+      "step_number": 74,
+      "title": "Get peer or expert review of the hypothesis."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 10,
+      "macro_step_number": 7,
+      "macro_title": "Formulate Hypothesis or Proposed Solution",
+      "step_id": "U172-075",
+      "step_number": 75,
+      "title": "Finalize and lock the hypothesis statement."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 1,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-076",
+      "step_number": 76,
+      "title": "Collect baseline measurements."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 2,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-077",
+      "step_number": 77,
+      "title": "Map the as-is process or situation."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 3,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-078",
+      "step_number": 78,
+      "title": "Identify pain points and bottlenecks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 4,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-079",
+      "step_number": 79,
+      "title": "Run initial data analysis and visualization."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 5,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-080",
+      "step_number": 80,
+      "title": "Compare current state versus desired future state."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 6,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-081",
+      "step_number": 81,
+      "title": "Quantify the gap that needs to be closed."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 11,
+      "macro_step_number": 7,
+      "macro_title": "Analyze Current State and Existing Data",
+      "step_id": "U172-082",
+      "step_number": 82,
+      "title": "Update the hypothesis if data contradicts assumptions."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 1,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-083",
+      "step_number": 83,
+      "title": "Create detailed design specifications or wireframes."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 2,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-084",
+      "step_number": 84,
+      "title": "Develop creative concepts or experimental protocols."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 3,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-085",
+      "step_number": 85,
+      "title": "Build prototypes or mockups of key elements."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 4,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-086",
+      "step_number": 86,
+      "title": "Define success criteria for the design."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 5,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-087",
+      "step_number": 87,
+      "title": "Conduct design reviews with stakeholders."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 6,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-088",
+      "step_number": 88,
+      "title": "Incorporate feedback and iterate the design."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 12,
+      "macro_step_number": 7,
+      "macro_title": "Design the Solution, Experiment, or Campaign",
+      "step_id": "U172-089",
+      "step_number": 89,
+      "title": "Freeze the final design."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 13,
+      "macro_step_number": 1,
+      "macro_title": "Prepare Materials, Tools, and Resources",
+      "step_id": "U172-090",
+      "step_number": 90,
+      "title": "Create a complete bill of materials or equipment list."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 13,
+      "macro_step_number": 2,
+      "macro_title": "Prepare Materials, Tools, and Resources",
+      "step_id": "U172-091",
+      "step_number": 91,
+      "title": "Order or reserve all physical and digital assets."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 13,
+      "macro_step_number": 3,
+      "macro_title": "Prepare Materials, Tools, and Resources",
+      "step_id": "U172-092",
+      "step_number": 92,
+      "title": "Set up environments, accounts, or lab conditions."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 13,
+      "macro_step_number": 4,
+      "macro_title": "Prepare Materials, Tools, and Resources",
+      "step_id": "U172-093",
+      "step_number": 93,
+      "title": "Prepare templates, scripts, or content assets."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 13,
+      "macro_step_number": 5,
+      "macro_title": "Prepare Materials, Tools, and Resources",
+      "step_id": "U172-094",
+      "step_number": 94,
+      "title": "Test all tools and systems before launch."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 13,
+      "macro_step_number": 6,
+      "macro_title": "Prepare Materials, Tools, and Resources",
+      "step_id": "U172-095",
+      "step_number": 95,
+      "title": "Conduct a final readiness checklist."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 14,
+      "macro_step_number": 1,
+      "macro_title": "Construct or Build the Prototype, Plan, or Assets",
+      "step_id": "U172-096",
+      "step_number": 96,
+      "title": "Build the core deliverable or experimental setup."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 14,
+      "macro_step_number": 2,
+      "macro_title": "Construct or Build the Prototype, Plan, or Assets",
+      "step_id": "U172-097",
+      "step_number": 97,
+      "title": "Create supporting materials such as documentation or training."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 14,
+      "macro_step_number": 3,
+      "macro_title": "Construct or Build the Prototype, Plan, or Assets",
+      "step_id": "U172-098",
+      "step_number": 98,
+      "title": "Perform internal quality checks during construction."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 14,
+      "macro_step_number": 4,
+      "macro_title": "Construct or Build the Prototype, Plan, or Assets",
+      "step_id": "U172-099",
+      "step_number": 99,
+      "title": "Document every build decision and change."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 14,
+      "macro_step_number": 5,
+      "macro_title": "Construct or Build the Prototype, Plan, or Assets",
+      "step_id": "U172-100",
+      "step_number": 100,
+      "title": "Complete a minimum viable version."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 14,
+      "macro_step_number": 6,
+      "macro_title": "Construct or Build the Prototype, Plan, or Assets",
+      "step_id": "U172-101",
+      "step_number": 101,
+      "title": "Conduct alpha testing with a small internal group."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 15,
+      "macro_step_number": 1,
+      "macro_title": "Execute Initial Implementation or Experiment",
+      "step_id": "U172-102",
+      "step_number": 102,
+      "title": "Launch the experiment, campaign, or project phase."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 15,
+      "macro_step_number": 2,
+      "macro_title": "Execute Initial Implementation or Experiment",
+      "step_id": "U172-103",
+      "step_number": 103,
+      "title": "Follow the exact procedure or protocol."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 15,
+      "macro_step_number": 3,
+      "macro_title": "Execute Initial Implementation or Experiment",
+      "step_id": "U172-104",
+      "step_number": 104,
+      "title": "Record start time, conditions, and initial observations."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 15,
+      "macro_step_number": 4,
+      "macro_title": "Execute Initial Implementation or Experiment",
+      "step_id": "U172-105",
+      "step_number": 105,
+      "title": "Monitor for any immediate issues."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 15,
+      "macro_step_number": 5,
+      "macro_title": "Execute Initial Implementation or Experiment",
+      "step_id": "U172-106",
+      "step_number": 106,
+      "title": "Capture raw data in real time."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 15,
+      "macro_step_number": 6,
+      "macro_title": "Execute Initial Implementation or Experiment",
+      "step_id": "U172-107",
+      "step_number": 107,
+      "title": "Complete the first full run or deployment."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 16,
+      "macro_step_number": 1,
+      "macro_title": "Monitor Progress and Collect Observations plus Data",
+      "step_id": "U172-108",
+      "step_number": 108,
+      "title": "Set up automated data collection where possible."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 16,
+      "macro_step_number": 2,
+      "macro_title": "Monitor Progress and Collect Observations plus Data",
+      "step_id": "U172-109",
+      "step_number": 109,
+      "title": "Take regular qualitative observations such as notes, photos, and logs."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 16,
+      "macro_step_number": 3,
+      "macro_title": "Monitor Progress and Collect Observations plus Data",
+      "step_id": "U172-110",
+      "step_number": 110,
+      "title": "Track all KPIs on the dashboard daily or weekly."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 16,
+      "macro_step_number": 4,
+      "macro_title": "Monitor Progress and Collect Observations plus Data",
+      "step_id": "U172-111",
+      "step_number": 111,
+      "title": "Note any unexpected events or anomalies."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 16,
+      "macro_step_number": 5,
+      "macro_title": "Monitor Progress and Collect Observations plus Data",
+      "step_id": "U172-112",
+      "step_number": 112,
+      "title": "Maintain a running observation journal."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 16,
+      "macro_step_number": 6,
+      "macro_title": "Monitor Progress and Collect Observations plus Data",
+      "step_id": "U172-113",
+      "step_number": 113,
+      "title": "Back up all data in multiple locations."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 17,
+      "macro_step_number": 1,
+      "macro_title": "Test and Validate Results",
+      "step_id": "U172-114",
+      "step_number": 114,
+      "title": "Run formal tests against success criteria."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 17,
+      "macro_step_number": 2,
+      "macro_title": "Test and Validate Results",
+      "step_id": "U172-115",
+      "step_number": 115,
+      "title": "Collect user or participant feedback."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 17,
+      "macro_step_number": 3,
+      "macro_title": "Test and Validate Results",
+      "step_id": "U172-116",
+      "step_number": 116,
+      "title": "Perform statistical analysis on quantitative data."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 17,
+      "macro_step_number": 4,
+      "macro_title": "Test and Validate Results",
+      "step_id": "U172-117",
+      "step_number": 117,
+      "title": "Compare actual results to predicted outcomes."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 17,
+      "macro_step_number": 5,
+      "macro_title": "Test and Validate Results",
+      "step_id": "U172-118",
+      "step_number": 118,
+      "title": "Identify any false positives or negatives."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 17,
+      "macro_step_number": 6,
+      "macro_title": "Test and Validate Results",
+      "step_id": "U172-119",
+      "step_number": 119,
+      "title": "Document test results with evidence."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 18,
+      "macro_step_number": 1,
+      "macro_title": "Analyze Results, Data, and Feedback",
+      "step_id": "U172-120",
+      "step_number": 120,
+      "title": "Clean and organize all collected data."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 18,
+      "macro_step_number": 2,
+      "macro_title": "Analyze Results, Data, and Feedback",
+      "step_id": "U172-121",
+      "step_number": 121,
+      "title": "Create charts, graphs, and visualizations."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 18,
+      "macro_step_number": 3,
+      "macro_title": "Analyze Results, Data, and Feedback",
+      "step_id": "U172-122",
+      "step_number": 122,
+      "title": "Identify patterns, correlations, and outliers."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 18,
+      "macro_step_number": 4,
+      "macro_title": "Analyze Results, Data, and Feedback",
+      "step_id": "U172-123",
+      "step_number": 123,
+      "title": "Synthesize quantitative and qualitative insights."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 18,
+      "macro_step_number": 5,
+      "macro_title": "Analyze Results, Data, and Feedback",
+      "step_id": "U172-124",
+      "step_number": 124,
+      "title": "Compare results against the original hypothesis."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 18,
+      "macro_step_number": 6,
+      "macro_title": "Analyze Results, Data, and Feedback",
+      "step_id": "U172-125",
+      "step_number": 125,
+      "title": "Produce a clear analysis summary."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 19,
+      "macro_step_number": 1,
+      "macro_title": "Draw Conclusions",
+      "step_id": "U172-126",
+      "step_number": 126,
+      "title": "State whether the hypothesis is supported or rejected."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 19,
+      "macro_step_number": 2,
+      "macro_title": "Draw Conclusions",
+      "step_id": "U172-127",
+      "step_number": 127,
+      "title": "Explain why the results occurred."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 19,
+      "macro_step_number": 3,
+      "macro_title": "Draw Conclusions",
+      "step_id": "U172-128",
+      "step_number": 128,
+      "title": "Quantify the actual impact achieved."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 19,
+      "macro_step_number": 4,
+      "macro_title": "Draw Conclusions",
+      "step_id": "U172-129",
+      "step_number": 129,
+      "title": "List any new questions that emerged."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 19,
+      "macro_step_number": 5,
+      "macro_title": "Draw Conclusions",
+      "step_id": "U172-130",
+      "step_number": 130,
+      "title": "Write the official conclusion section."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 20,
+      "macro_step_number": 1,
+      "macro_title": "Refine, Optimize, and Adjust",
+      "step_id": "U172-131",
+      "step_number": 131,
+      "title": "Identify the top 3\u20135 improvements needed."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 20,
+      "macro_step_number": 2,
+      "macro_title": "Refine, Optimize, and Adjust",
+      "step_id": "U172-132",
+      "step_number": 132,
+      "title": "Prioritize changes by impact and effort."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 20,
+      "macro_step_number": 3,
+      "macro_title": "Refine, Optimize, and Adjust",
+      "step_id": "U172-133",
+      "step_number": 133,
+      "title": "Implement quick wins immediately."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 20,
+      "macro_step_number": 4,
+      "macro_title": "Refine, Optimize, and Adjust",
+      "step_id": "U172-134",
+      "step_number": 134,
+      "title": "Redesign or re-test any failing elements."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 20,
+      "macro_step_number": 5,
+      "macro_title": "Refine, Optimize, and Adjust",
+      "step_id": "U172-135",
+      "step_number": 135,
+      "title": "Update documentation and processes."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 20,
+      "macro_step_number": 6,
+      "macro_title": "Refine, Optimize, and Adjust",
+      "step_id": "U172-136",
+      "step_number": 136,
+      "title": "Prepare the optimized version for the next cycle."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 21,
+      "macro_step_number": 1,
+      "macro_title": "Engage Target Audience, Prospects, or Users",
+      "step_id": "U172-137",
+      "step_number": 137,
+      "title": "Launch outreach to the defined audience."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 21,
+      "macro_step_number": 2,
+      "macro_title": "Engage Target Audience, Prospects, or Users",
+      "step_id": "U172-138",
+      "step_number": 138,
+      "title": "Deliver value-first messaging and content."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 21,
+      "macro_step_number": 3,
+      "macro_title": "Engage Target Audience, Prospects, or Users",
+      "step_id": "U172-139",
+      "step_number": 139,
+      "title": "Capture initial reactions and engagement metrics."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 21,
+      "macro_step_number": 4,
+      "macro_title": "Engage Target Audience, Prospects, or Users",
+      "step_id": "U172-140",
+      "step_number": 140,
+      "title": "Qualify leads or participants based on criteria."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 21,
+      "macro_step_number": 5,
+      "macro_title": "Engage Target Audience, Prospects, or Users",
+      "step_id": "U172-141",
+      "step_number": 141,
+      "title": "Move qualified prospects into the next stage."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 22,
+      "macro_step_number": 1,
+      "macro_title": "Nurture Relationships and Deliver Customer Experience",
+      "step_id": "U172-142",
+      "step_number": 142,
+      "title": "Send personalized follow-up sequences."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 22,
+      "macro_step_number": 2,
+      "macro_title": "Nurture Relationships and Deliver Customer Experience",
+      "step_id": "U172-143",
+      "step_number": 143,
+      "title": "Provide ongoing value and education."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 22,
+      "macro_step_number": 3,
+      "macro_title": "Nurture Relationships and Deliver Customer Experience",
+      "step_id": "U172-144",
+      "step_number": 144,
+      "title": "Collect satisfaction and NPS feedback."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 22,
+      "macro_step_number": 4,
+      "macro_title": "Nurture Relationships and Deliver Customer Experience",
+      "step_id": "U172-145",
+      "step_number": 145,
+      "title": "Address objections and concerns promptly."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 22,
+      "macro_step_number": 5,
+      "macro_title": "Nurture Relationships and Deliver Customer Experience",
+      "step_id": "U172-146",
+      "step_number": 146,
+      "title": "Build emotional connection and trust."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 23,
+      "macro_step_number": 1,
+      "macro_title": "Address Competition, Proposals, and Negotiations",
+      "step_id": "U172-147",
+      "step_number": 147,
+      "title": "Monitor competitor activity and positioning."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 23,
+      "macro_step_number": 2,
+      "macro_title": "Address Competition, Proposals, and Negotiations",
+      "step_id": "U172-148",
+      "step_number": 148,
+      "title": "Prepare differentiated proposals or offers."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 23,
+      "macro_step_number": 3,
+      "macro_title": "Address Competition, Proposals, and Negotiations",
+      "step_id": "U172-149",
+      "step_number": 149,
+      "title": "Handle objections with evidence-based responses."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 23,
+      "macro_step_number": 4,
+      "macro_title": "Address Competition, Proposals, and Negotiations",
+      "step_id": "U172-150",
+      "step_number": 150,
+      "title": "Negotiate terms, pricing, or scope."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 23,
+      "macro_step_number": 5,
+      "macro_title": "Address Competition, Proposals, and Negotiations",
+      "step_id": "U172-151",
+      "step_number": 151,
+      "title": "Close or advance the opportunity."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 24,
+      "macro_step_number": 1,
+      "macro_title": "Achieve Advancement, Closing, or Final Delivery",
+      "step_id": "U172-152",
+      "step_number": 152,
+      "title": "Finalize all deliverables or agreements."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 24,
+      "macro_step_number": 2,
+      "macro_title": "Achieve Advancement, Closing, or Final Delivery",
+      "step_id": "U172-153",
+      "step_number": 153,
+      "title": "Obtain formal acceptance or sign-off."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 24,
+      "macro_step_number": 3,
+      "macro_title": "Achieve Advancement, Closing, or Final Delivery",
+      "step_id": "U172-154",
+      "step_number": 154,
+      "title": "Complete hand-off to the recipient or next team."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 24,
+      "macro_step_number": 4,
+      "macro_title": "Achieve Advancement, Closing, or Final Delivery",
+      "step_id": "U172-155",
+      "step_number": 155,
+      "title": "Celebrate the milestone with the team."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 24,
+      "macro_step_number": 5,
+      "macro_title": "Achieve Advancement, Closing, or Final Delivery",
+      "step_id": "U172-156",
+      "step_number": 156,
+      "title": "Archive all project artifacts."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 25,
+      "macro_step_number": 1,
+      "macro_title": "Measure Overall Performance and Impact",
+      "step_id": "U172-157",
+      "step_number": 157,
+      "title": "Calculate final ROI and business, scientific, or operational impact."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 25,
+      "macro_step_number": 2,
+      "macro_title": "Measure Overall Performance and Impact",
+      "step_id": "U172-158",
+      "step_number": 158,
+      "title": "Compare actual KPIs to original targets."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 25,
+      "macro_step_number": 3,
+      "macro_title": "Measure Overall Performance and Impact",
+      "step_id": "U172-159",
+      "step_number": 159,
+      "title": "Run a full before-and-after analysis."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 25,
+      "macro_step_number": 4,
+      "macro_title": "Measure Overall Performance and Impact",
+      "step_id": "U172-160",
+      "step_number": 160,
+      "title": "Produce an executive summary of results."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 25,
+      "macro_step_number": 5,
+      "macro_title": "Measure Overall Performance and Impact",
+      "step_id": "U172-161",
+      "step_number": 161,
+      "title": "Present findings to all stakeholders."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 1,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-162",
+      "step_number": 162,
+      "title": "Hold a structured retrospective meeting."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 2,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-163",
+      "step_number": 163,
+      "title": "Capture what went well."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 3,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-164",
+      "step_number": 164,
+      "title": "Capture what did not go well."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 4,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-165",
+      "step_number": 165,
+      "title": "Identify root causes of issues."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 5,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-166",
+      "step_number": 166,
+      "title": "Document 5\u201310 actionable best practices."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 6,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-167",
+      "step_number": 167,
+      "title": "Create recommendations for future cycles."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 7,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-168",
+      "step_number": 168,
+      "title": "Update templates, checklists, and playbooks."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 8,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-169",
+      "step_number": 169,
+      "title": "Store all documentation in the central repository."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 26,
+      "macro_step_number": 9,
+      "macro_title": "Document Lessons Learned, Best Practices, and Recommendations",
+      "step_id": "U172-170",
+      "step_number": 170,
+      "title": "Share key learnings with the wider organization."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 27,
+      "macro_step_number": 1,
+      "macro_title": "Repeat and Iterate",
+      "step_id": "U172-171",
+      "step_number": 171,
+      "title": "Conduct a complete retrospective and synthesize every lesson from Steps 1\u2013170."
+    },
+    {
+      "blackroad_mapping": {
+        "collaboration": "RoadTrip",
+        "identity_permissions": "CarKeys",
+        "planning": "RoadMap",
+        "proof": "RoadChain",
+        "task_engine": "RoadWork"
+      },
+      "default_status": "UNCLAIMED",
+      "fields": {
+        "awaiting_type": null,
+        "claimed_at": null,
+        "claimed_by": null,
+        "due_at": null,
+        "notes": "",
+        "owner": null,
+        "receipt_id": null
+      },
+      "macro_number": 27,
+      "macro_step_number": 2,
+      "macro_title": "Repeat and Iterate",
+      "step_id": "U172-172",
+      "step_number": 172,
+      "title": "Immediately restart the entire 172-step process at Step 1, applying every improvement, raising the performance bar, and running the next cycle at a higher level of excellence."
+    }
+  ],
+  "version": "0.1"
+}
