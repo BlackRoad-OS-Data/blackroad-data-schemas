@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RoadOS Email Workflow Plain Proof</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; background: white; color: #111; }
+    h1, h2 { margin: 0 0 8px; }
+    .truth { border: 2px solid #111; padding: 10px; margin-bottom: 12px; background: #f5f5f5; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    section { border: 1px solid #333; padding: 10px; min-height: 180px; }
+    button, select, textarea { font: inherit; margin: 3px 0; }
+    textarea { width: 100%; min-height: 90px; }
+    .item { border: 1px solid #999; padding: 6px; margin: 5px 0; cursor: pointer; }
+    .active { outline: 3px solid #111; }
+    .mock { font-weight: bold; color: #a00000; }
+    .dock { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin-top: 12px; }
+    .dock button { min-height: 54px; }
+    pre { white-space: pre-wrap; background: #f2f2f2; padding: 8px; max-height: 160px; overflow: auto; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .dock { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <h1>RoadOS Email Workflow Plain Proof</h1>
+  <div class="truth">
+    <strong><span class="mock">LOCAL MOCK PROOF.</span></strong>
+    No Gmail. No real send. No external API. No secrets. No production claim.
+    Every action changes local browser state and writes a visible mock receipt.
+  </div>
+
+  <div class="grid">
+    <section id="slot-1"><h2>1. Inbox List</h2><div id="inbox"></div></section>
+    <section id="slot-2"><h2>2. Email Thread</h2><div id="thread"></div></section>
+    <section id="slot-3"><h2>3. Compose / Reply</h2><textarea id="compose"></textarea><br><button onclick="draftReply()">Draft Reply MOCK</button> <button onclick="sendMock()">Send MOCK</button></section>
+    <section id="slot-4"><h2>4. Workflow Item</h2><div id="workflow"></div><button onclick="claimItem()">Claim</button> <button onclick="startWork()">Start Work</button> <button onclick="completeItem()">Done</button><br><select id="awaitingType"><option value="">awaiting type</option><option value="customer_response">customer_response</option><option value="internal_approval">internal_approval</option><option value="external_vendor">external_vendor</option><option value="legal_review">legal_review</option></select> <button onclick="setAwaiting()">Set Awaiting</button></section>
+    <section id="slot-5"><h2>5. AI Actions</h2><button onclick="summarizeMock()">Summarize MOCK</button> <button onclick="createTask()">Create Task MOCK</button> <button onclick="draftReply()">Draft Reply MOCK</button> <button onclick="markRisk()">Mark Risk MOCK</button><pre id="aiOutput">No AI action yet.</pre></section>
+    <section id="slot-6"><h2>6. Attachment / File Preview</h2><div id="attachments"></div><pre id="filePreview">MOCK preview only.</pre></section>
+    <section id="slot-7"><h2>7. Receipt / History</h2><pre id="receipts">No receipts yet.</pre></section>
+    <section id="slot-8"><h2>8. Agent / Context Panel</h2><p>Agent: Roadie MOCK<br>Context allowed: true MOCK<br>Real send: false<br>Secrets: false</p><button onclick="giveAgentContext()">Give Agent Context MOCK</button><pre id="agentOutput">No context shared yet.</pre></section>
+  </div>
+
+  <h2>Dock Slots 9 to 20</h2>
+  <div class="dock">
+    <button id="dock-9">9<br>Memory</button><button id="dock-10">10<br>Reasoning</button><button id="dock-11">11<br>Coding</button><button id="dock-12">12<br>Tools</button><button id="dock-13">13<br>Workflow</button><button id="dock-14">14<br>Search</button><button id="dock-15">15<br>Data</button><button id="dock-16">16<br>Comms</button><button id="dock-17">17<br>Vision</button><button id="dock-18">18<br>Security</button><button id="dock-19">19<br>Deploy</button><button id="dock-20">20<br>Home</button>
+  </div>
+
+<script>
+const now = () => new Date().toISOString();
+
+let state = {
+  selectedId: "email-001",
+  emails: [
+    {
+      id: "email-001",
+      from: "megan@example.invalid",
+      subject: "Pre-employment screen question",
+      received_at: "2026-05-20T12:00:00Z",
+      read_at: null,
+      body: "MOCK email body. Compliance is reviewing the question.",
+      attachments: ["offer-details.pdf", "screening-info.txt"],
+      workflow: { index_id: "WF-2026-0520-0001", status: "received", claimed_by: "", awaiting_type: "", tasks: [] }
+    },
+    {
+      id: "email-002",
+      from: "alex@blackroad.invalid",
+      subject: "RoadOS window grammar",
+      received_at: "2026-05-20T13:00:00Z",
+      read_at: null,
+      body: "MOCK email body. Turn 1 to 8 windows and 9 to 20 dock into a work surface.",
+      attachments: ["window-sketch.png"],
+      workflow: { index_id: "WF-2026-0520-0002", status: "received", claimed_by: "", awaiting_type: "", tasks: [] }
+    }
+  ],
+  receipts: []
+};
+
+function selectedEmail() {
+  return state.emails.find(e => e.id === state.selectedId);
+}
+
+function receipt(action, detail) {
+  const e = selectedEmail();
+  state.receipts.unshift({
+    receipt_id: "MOCK-RCPT-" + Math.random().toString(16).slice(2, 10),
+    at: now(),
+    email_id: e.id,
+    workflow_item_id: e.workflow.index_id,
+    action,
+    detail,
+    mock: true
+  });
+  render();
+}
+
+function selectEmail(id) {
+  state.selectedId = id;
+  const e = selectedEmail();
+  if (!e.read_at) {
+    e.read_at = now();
+    e.workflow.status = "read";
+    receipt("read_email", "Email opened and marked read.");
+  }
+  render();
+}
+
+function claimItem() {
+  const e = selectedEmail();
+  e.workflow.claimed_by = "alexandria";
+  e.workflow.status = "triaged";
+  receipt("claim", "Claimed by alexandria.");
+}
+
+function startWork() {
+  selectedEmail().workflow.status = "in_progress";
+  receipt("start_work", "Moved to in_progress.");
+}
+
+function setAwaiting() {
+  const type = document.getElementById("awaitingType").value;
+  if (!type) { alert("Choose awaiting type first."); return; }
+  const e = selectedEmail();
+  e.workflow.status = "awaiting";
+  e.workflow.awaiting_type = type;
+  receipt("set_awaiting", "Awaiting type set to " + type + ".");
+}
+
+function completeItem() {
+  selectedEmail().workflow.status = "done";
+  receipt("complete", "Moved to done.");
+}
+
+function draftReply() {
+  document.getElementById("compose").value = "MOCK DRAFT\\n\\nHi,\\n\\nThanks for the update. I am reviewing this and will follow up shortly.\\n\\nBest,\\nAlexa";
+  receipt("draft_reply", "MOCK draft inserted.");
+}
+
+function sendMock() {
+  receipt("send_mock", "MOCK only. No email was sent.");
+}
+
+function summarizeMock() {
+  const e = selectedEmail();
+  document.getElementById("aiOutput").textContent = "MOCK SUMMARY: " + e.subject + ". Status: " + e.workflow.status + ".";
+  receipt("ai_summarize_mock", "MOCK summary generated.");
+}
+
+function createTask() {
+  const e = selectedEmail();
+  const task = "MOCK task " + (e.workflow.tasks.length + 1) + ": follow up on " + e.subject;
+  e.workflow.tasks.push(task);
+  receipt("create_task_mock", task);
+}
+
+function markRisk() {
+  document.getElementById("aiOutput").textContent = "MOCK RISK: human review required before external action.";
+  receipt("mark_risk_mock", "Risk marked.");
+}
+
+function previewAttachment(name) {
+  document.getElementById("filePreview").textContent = "MOCK FILE PREVIEW: " + name + "\\nNo file opened.";
+  receipt("preview_attachment_mock", name);
+}
+
+function giveAgentContext() {
+  const e = selectedEmail();
+  document.getElementById("agentOutput").textContent = "MOCK CONTEXT SHARED with Roadie: " + e.subject;
+  receipt("agent_context_mock", "Context shared with Roadie MOCK.");
+}
+
+function render() {
+  const e = selectedEmail();
+
+  document.getElementById("inbox").innerHTML = state.emails.map(email => `
+    <div class="item ${email.id === state.selectedId ? "active" : ""}" onclick="selectEmail(&quot;${email.id}&quot;)">
+      <strong>${email.subject}</strong><br>
+      From: ${email.from}<br>
+      Received: ${email.received_at}<br>
+      Status: ${email.workflow.status}<br>
+      <span class="mock">MOCK</span>
+    </div>
+  `).join("");
+
+  document.getElementById("thread").innerHTML = `
+    <strong>${e.subject}</strong><br>
+    From: ${e.from}<br>
+    Email ID: ${e.id}<br>
+    Read at: ${e.read_at || "not read yet"}<br>
+    Workflow: ${e.workflow.index_id}<hr>
+    <p>${e.body}</p><span class="mock"><span class="mock">MOCK THREAD</span></span>
+  `;
+
+  document.getElementById("workflow").innerHTML = `
+    <strong>${e.workflow.index_id}</strong><br>
+    Status: ${e.workflow.status}<br>
+    Claimed by: ${e.workflow.claimed_by || "unclaimed"}<br>
+    Awaiting type: ${e.workflow.awaiting_type || "none"}<br>
+    Tasks:<ul>${e.workflow.tasks.map(t => `<li>${t}</li>`).join("") || "<li>none</li>"}</ul>
+  `;
+
+  document.getElementById("attachments").innerHTML = e.attachments.map(name => `<button onclick="previewAttachment(&quot;${name}&quot;)">${name} MOCK</button><br>`).join("");
+
+  document.getElementById("receipts").textContent = state.receipts.length ? JSON.stringify(state.receipts, null, 2) : "No receipts yet.";
+}
+
+render();
+</script>
+</body>
+</html>
