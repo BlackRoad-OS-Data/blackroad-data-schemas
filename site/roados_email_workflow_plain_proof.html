@@ -814,6 +814,49 @@ function setupWindowBehavior() {
   }
 }
 
+function getFilteredEmails() {
+  const statusFilter = document.getElementById("inboxStatusFilter")?.value || "all";
+  const sortMode = document.getElementById("inboxSortMode")?.value || "received_desc";
+
+  let emails = state.emails.slice();
+
+  if (statusFilter !== "all") {
+    emails = emails.filter(email => email.workflow.status === statusFilter);
+  }
+
+  emails.sort((a, b) => {
+    if (sortMode === "received_asc") return String(a.received_at).localeCompare(String(b.received_at));
+    if (sortMode === "received_desc") return String(b.received_at).localeCompare(String(a.received_at));
+    if (sortMode === "subject_asc") return String(a.subject).localeCompare(String(b.subject));
+    if (sortMode === "status_asc") return String(a.workflow.status).localeCompare(String(b.workflow.status));
+    return 0;
+  });
+
+  const summary = document.getElementById("inboxFilterSummary");
+  if (summary) {
+    summary.textContent = JSON.stringify({
+      mock: true,
+      status_filter: statusFilter,
+      sort_mode: sortMode,
+      visible_count: emails.length,
+      total_count: state.emails.length
+    }, null, 2);
+  }
+
+  return emails;
+}
+
+function clearInboxFilters() {
+  const status = document.getElementById("inboxStatusFilter");
+  const sort = document.getElementById("inboxSortMode");
+
+  if (status) status.value = "all";
+  if (sort) sort.value = "received_desc";
+
+  receipt("clear_inbox_filters_mock", "Cleared local inbox filters.");
+  render();
+}
+
 function render() {
   saveState();
   const e = selectedEmail();
