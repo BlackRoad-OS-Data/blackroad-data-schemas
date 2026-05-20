@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+CMD="${1:-help}"
+
+case "$CMD" in
+  check)
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" check
+    ;;
+  validate)
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" validate
+    ;;
+  open)
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" open
+    ;;
+  serve)
+    shift || true
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" serve "$@"
+    ;;
+  where)
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" where
+    ;;
+  status)
+    git -C "$ROOT" status --short
+    ;;
+  log)
+    git -C "$ROOT" log --oneline -5
+    ;;
+  report)
+    python3 "$ROOT/tools/roados_email_workflow_report.py"
+    ;;
+
+  doctor)
+    echo "=== RoadOS Doctor ==="
+    echo ""
+
+    set +e
+    python3 "$ROOT/tools/roadctl_roados_email_workflow.py" check
+    CHECK_RC=$?
+    set -e
+
+    echo ""
+    echo "=== Git Branch ==="
+    git -C "$ROOT" branch --show-current
+
+    echo ""
+    echo "=== Git Status ==="
+    STATUS="$(git -C "$ROOT" status --short)"
+    if [ -z "$STATUS" ]; then
+      echo "GREEN clean"
+    else
+      echo "YELLOW dirty"
+      printf '%s\n' "$STATUS"
+    fi
+
+    echo ""
+    echo "=== Recent Commits ==="
+    git -C "$ROOT" log --oneline -5
+
+    echo ""
+    echo "=== Open PR For Current Branch ==="
+    BRANCH="$(git -C "$ROOT" branch --show-current)"
+    gh pr list \
+      --repo BlackRoad-OS-Data/blackroad-data-schemas \
+      --head "$BRANCH" \
+      --state open \
+      --json number,title,isDraft,baseRefName,headRefName,url \
+      --jq '.[] | {number,title,isDraft,base:.baseRefName,head:.headRefName,url}' || true
+
+    echo ""
+    if [ "$CHECK_RC" -eq 0 ]; then
+      echo "DOCTOR RESULT: GREEN/YELLOW usable. Review any yellow items."
+    else
+      echo "DOCTOR RESULT: RED blocking issue. Fix before PR/merge."
+    fi
+
+    exit "$CHECK_RC"
+    ;;
+  help|--help|-h)
+    cat <<'EOF'
+RoadOS Email Workflow Proof
+
+Commands:
+  ./roados check       Green/yellow/red terminal health check
+  ./roados validate    Run validator only
+  ./roados open        Open local HTML proof
+  ./roados serve       Serve locally on http://127.0.0.1:8765
+  ./roados where       Show important paths
+  ./roados status      Git status
+  ./roados log         Recent commits
+  ./roados doctor      Check + git status + PR status
+  ./roados report      Write markdown/json proof status report
+
+Still local proof only:
+  no Gmail
+  no real send
+  no external API
+  no backend
+  no secrets
+  no production claim
+EOF
+    ;;
+  *)
+    echo "Unknown command: $CMD"
+    echo "Run: ./roados help"
+    exit 2
+    ;;
+esac

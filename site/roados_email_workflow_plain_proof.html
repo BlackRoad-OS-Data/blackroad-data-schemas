@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RoadOS Email Workflow Plain Proof</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; background: white; color: #111; }
+    h1, h2 { margin: 0 0 8px; }
+    .truth { border: 2px solid #111; padding: 10px; margin-bottom: 12px; background: #f5f5f5; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    section { border: 1px solid #333; padding: 10px; min-height: 180px; }
+    button, select, textarea { font: inherit; margin: 3px 0; }
+    textarea { width: 100%; min-height: 90px; }
+    .item { border: 1px solid #999; padding: 6px; margin: 5px 0; cursor: pointer; }
+    .active { outline: 3px solid #111; }
+    .mock { font-weight: bold; color: #a00000; }
+    .dock { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin-top: 12px; }
+    .dock button { min-height: 54px; }
+    pre { white-space: pre-wrap; background: #f2f2f2; padding: 8px; max-height: 160px; overflow: auto; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .dock { grid-template-columns: repeat(2, 1fr); } }
+  
+    .expanded-window {
+      position: fixed;
+      inset: 16px;
+      z-index: 999;
+      background: white;
+      min-height: auto;
+      overflow: auto;
+      box-shadow: 0 0 0 9999px rgba(0,0,0,.35);
+    }
+
+    .restore-button {
+      float: right;
+      margin-left: 8px;
+    }
+
+    .window-focused {
+      outline: 3px solid #111;
+    }
+  
+    .road-drag-over {
+      outline: 4px dashed #111;
+      background: #fafafa;
+    }
+
+    .road-dragging {
+      opacity: .45;
+    }
+  
+    .dock-drop-target {
+      outline: 4px dashed #111;
+      background: #f7f7f7;
+    }
+
+    #road-dock-storage {
+      border: 1px solid #333;
+      padding: 10px;
+      margin-top: 10px;
+      background: #f7f7f7;
+    }
+
+    .stored-window-button {
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>RoadOS Email Workflow Plain Proof</h1>
+  <div class="truth">
+    <strong><span class="mock">LOCAL MOCK PROOF.</span></strong>
+    No Gmail. No real send. No external API. No secrets. No production claim.
+    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots. Drag a slot to the dock to store it. Click stored window to restore. Layout saves to localStorage and restores after refresh.
+  </div>
+
+  <section id="inbox-filter-controls">
+    <h2>Inbox Filter / Sort</h2>
+    <p><strong>MOCK local filter.</strong> Filters browser-local workflow/email state only.</p>
+    <label>Status:</label>
+    <select id="inboxStatusFilter" onchange="render(); receipt('filter_status_mock', 'Changed local inbox status filter to ' + this.value + '.');">
+      <option value="all">all</option>
+      <option value="received">received</option>
+      <option value="read">read</option>
+      <option value="triaged">triaged</option>
+      <option value="in_progress">in_progress</option>
+      <option value="awaiting">awaiting</option>
+      <option value="done">done</option>
+      <option value="archived">archived</option>
+    </select>
+
+    <label>Sort:</label>
+    <select id="inboxSortMode" onchange="render(); receipt('sort_inbox_mock', 'Changed local inbox sort mode to ' + this.value + '.');">
+      <option value="received_desc">received newest first</option>
+      <option value="received_asc">received oldest first</option>
+      <option value="subject_asc">subject A-Z</option>
+      <option value="status_asc">status A-Z</option>
+    </select>
+
+    <button onclick="clearInboxFilters()">Clear Filters MOCK</button>
+    <pre id="inboxFilterSummary">No filter applied yet.</pre>
+  </section>
+
+  <section id="local-search-controls">
+    <h2>Local Search / Recall</h2>
+    <p><strong>MOCK local search.</strong> Searches browser-local emails, workflow tasks, and receipts only. No external search.</p>
+    <input id="localSearchQuery" placeholder="Search emails, tasks, receipts..." style="width: 70%;">
+    <button onclick="runLocalSearch()">Search Local State MOCK</button>
+    <button onclick="clearLocalSearch()">Clear Search</button>
+    <pre id="localSearchResults">No search run yet.</pre>
+  </section>
+
+  <section id="workspace-package-controls">
+    <h2>Workspace Package Import / Export</h2>
+    <p><strong>MOCK portable workspace package.</strong> Exports local browser state, layout, emails, tasks, and receipts as JSON. No server.</p>
+    <button onclick="exportWorkspacePackage()">Export Workspace Package MOCK</button>
+    <button onclick="importWorkspacePackage()">Import Workspace Package MOCK</button>
+    <button onclick="downloadWorkspacePackage()">Download JSON MOCK</button>
+    <br>
+    <textarea id="workspacePackageIO" placeholder="Workspace package JSON appears here. Paste package JSON here to import."></textarea>
+  </section>
+
+  <section id="workspace-presets">
+    <h2>Workspace Presets</h2>
+    <p><strong>MOCK presets.</strong> Rearranges local RoadOS slots and saves layout in this browser only.</p>
+    <button onclick="applyWorkspacePreset('email')">Email Setup MOCK</button>
+    <button onclick="applyWorkspacePreset('coding')">Coding Setup MOCK</button>
+    <button onclick="applyWorkspacePreset('roadtrip')">RoadTrip Setup MOCK</button>
+    <button onclick="saveCurrentWorkspacePreset()">Save Current Layout MOCK</button>
+    <pre id="workspacePresetOutput">No workspace preset applied yet.</pre>
+  </section>
+
+  <section id="local-state-controls">
+    <h2>Local State / JSON</h2>
+    <p><strong>MOCK local persistence.</strong> Saves to this browser only using localStorage. Export/import uses pasted JSON. No server.</p>
+    <button onclick="saveState(); receipt('manual_save', 'Saved current local state to browser localStorage.');">Save Local State MOCK</button>
+    <button onclick="exportState()">Export JSON</button>
+    <button onclick="importState()">Import Pasted JSON MOCK</button>
+    <button onclick="resetLocalState()">Reset Local State MOCK</button>
+    <br>
+    <textarea id="stateJsonIO" placeholder="Exported state appears here. Paste JSON here to import."></textarea>
+  </section>
+
+  <div class="grid">
+    <section id="slot-1"><h2>1. Inbox List</h2><div id="inbox"></div></section>
+    <section id="slot-2"><h2>2. Email Thread</h2><div id="thread"></div></section>
+    <section id="slot-3"><h2>3. Compose / Reply</h2><textarea id="compose"></textarea><br><button onclick="draftReply()">Draft Reply MOCK</button> <button onclick="sendMock()">Send MOCK</button></section>
+    <section id="slot-4"><h2>4. Workflow Item</h2><div id="workflow"></div><button onclick="claimItem()">Claim</button> <button onclick="startWork()">Start Work</button> <button onclick="completeItem()">Done</button><br><select id="awaitingType"><option value="">awaiting type</option><option value="customer_response">customer_response</option><option value="internal_approval">internal_approval</option><option value="external_vendor">external_vendor</option><option value="legal_review">legal_review</option></select> <button onclick="setAwaiting()">Set Awaiting</button></section>
+    <section id="slot-5"><h2>5. AI Actions</h2><button onclick="summarizeMock()">Summarize MOCK</button> <button onclick="createTask()">Create Task MOCK</button> <button onclick="draftReply()">Draft Reply MOCK</button> <button onclick="markRisk()">Mark Risk MOCK</button><pre id="aiOutput">No AI action yet.</pre></section>
+    <section id="slot-6"><h2>6. Attachment / File Preview</h2><div id="attachments"></div><pre id="filePreview">MOCK preview only.</pre></section>
+    <section id="slot-7"><h2>7. Receipt / History</h2><pre id="receipts">No receipts yet.</pre></section>
+    <section id="slot-8"><h2>8. Agent / Context Panel</h2><p>Agent: Roadie MOCK<br>Context allowed: true MOCK<br>Real send: false<br>Secrets: false</p><button onclick="giveAgentContext()">Give Agent Context MOCK</button><pre id="agentOutput">No context shared yet.</pre></section>
+  </div>
+
+  <h2>Dock Slots 9 to 20</h2>
+  <div class="dock">
+    <button id="dock-9">9<br>Memory</button><button id="dock-10">10<br>Reasoning</button><button id="dock-11">11<br>Coding</button><button id="dock-12">12<br>Tools</button><button id="dock-13">13<br>Workflow</button><button id="dock-14">14<br>Search</button><button id="dock-15">15<br>Data</button><button id="dock-16">16<br>Comms</button><button id="dock-17">17<br>Vision</button><button id="dock-18">18<br>Security</button><button id="dock-19">19<br>Deploy</button><button id="dock-20">20<br>Home</button>
+  </div>
+
+<section id="road-dock-storage">
+    <h2>Stored Windows / Dock Return</h2>
+    <p><strong>MOCK dock storage.</strong> Drag any active slot to dock slots 9–20 to store it here. Click a stored window to restore it.</p>
+    <div id="storedWindows"></div>
+  </section>
+
+<script>
+const now = () => new Date().toISOString();
+const STORAGE_KEY = "blackroad.roados.email_workflow_plain_proof.v0";
+const WORKSPACE_PACKAGE_VERSION = "roadwork-email-workflow-package-v0";
+
+const workspacePresets = {
+  email: {
+    name: "Email Setup",
+    slot_order: ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"],
+    stored_slots: []
+  },
+  coding: {
+    name: "Coding Setup",
+    slot_order: ["slot-5", "slot-8", "slot-7", "slot-4", "slot-1", "slot-2", "slot-3", "slot-6"],
+    stored_slots: ["slot-6"]
+  },
+  roadtrip: {
+    name: "RoadTrip Setup",
+    slot_order: ["slot-2", "slot-8", "slot-5", "slot-7", "slot-1", "slot-4", "slot-3", "slot-6"],
+    stored_slots: []
+  }
+};
+
+let state = {
+  selectedId: "email-001",
+  emails: [
+    {
+      id: "email-001",
+      from: "megan@example.invalid",
+      subject: "Pre-employment screen question",
+      received_at: "2026-05-20T12:00:00Z",
+      read_at: null,
+      body: "MOCK email body. Compliance is reviewing the question.",
+      attachments: ["offer-details.pdf", "screening-info.txt"],
+      workflow: { index_id: "WF-2026-0520-0001", status: "received", claimed_by: "", awaiting_type: "", tasks: [] }
+    },
+    {
+      id: "email-002",
+      from: "alex@blackroad.invalid",
+      subject: "RoadOS window grammar",
+      received_at: "2026-05-20T13:00:00Z",
+      read_at: null,
+      body: "MOCK email body. Turn 1 to 8 windows and 9 to 20 dock into a work surface.",
+      attachments: ["window-sketch.png"],
+      workflow: { index_id: "WF-2026-0520-0002", status: "received", claimed_by: "", awaiting_type: "", tasks: [] }
+    }
+  ],
+  receipts: [],
+  layout: {
+    slot_order: ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"],
+    stored_slots: [],
+    updated_at: null
+  }
+};
+
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (err) {
+    console.warn("MOCK local save failed", err);
+  }
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const loaded = JSON.parse(raw);
+    if (loaded && Array.isArray(loaded.emails) && Array.isArray(loaded.receipts)) {
+      state = loaded;
+    }
+  } catch (err) {
+    console.warn("MOCK local load failed", err);
+  }
+}
+
+function exportState() {
+  const box = document.getElementById("stateJsonIO");
+  box.value = JSON.stringify(state, null, 2);
+  receipt("export_json_mock", "Exported current browser state as JSON into textarea.");
+}
+
+function importState() {
+  const box = document.getElementById("stateJsonIO");
+  try {
+    const imported = JSON.parse(box.value);
+    if (!imported || !Array.isArray(imported.emails) || !Array.isArray(imported.receipts)) {
+      alert("Invalid state JSON: expected emails[] and receipts[].");
+      return;
+    }
+    state = imported;
+    saveState();
+    receipt("import_json_mock", "Imported pasted JSON into browser state.");
+  } catch (err) {
+    alert("Could not parse JSON.");
+  }
+}
+
+function resetLocalState() {
+  localStorage.removeItem(STORAGE_KEY);
+  receipt("reset_local_state_mock", "Removed saved localStorage state. Reload page to return to default seed.");
+}
+
+function ensureLayoutState() {
+  if (!state.layout) {
+    state.layout = {
+      slot_order: ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"],
+      stored_slots: [],
+      updated_at: null
+    };
+  }
+
+  if (!Array.isArray(state.layout.slot_order) || state.layout.slot_order.length !== 8) {
+    state.layout.slot_order = ["slot-1", "slot-2", "slot-3", "slot-4", "slot-5", "slot-6", "slot-7", "slot-8"];
+  }
+
+  if (!Array.isArray(state.layout.stored_slots)) {
+    state.layout.stored_slots = [];
+  }
+}
+
+function recordLayoutState() {
+  ensureLayoutState();
+
+  const grid = document.querySelector(".grid");
+  if (grid) {
+    state.layout.slot_order = Array.from(grid.querySelectorAll("section[id^='slot-']")).map(el => el.id);
+  }
+
+  const stored = document.getElementById("storedWindows");
+  if (stored) {
+    state.layout.stored_slots = Array.from(stored.querySelectorAll("[data-restore-slot]")).map(el => el.dataset.restoreSlot);
+  }
+
+  state.layout.updated_at = now();
+  saveState();
+}
+
+function applyLayoutState() {
+  ensureLayoutState();
+
+  const grid = document.querySelector(".grid");
+  const stored = document.getElementById("storedWindows");
+
+  if (grid) {
+    state.layout.slot_order.forEach(slotId => {
+      const section = document.getElementById(slotId);
+      if (section && section.parentNode === grid) {
+        grid.appendChild(section);
+      }
+    });
+  }
+
+  document.querySelectorAll(".grid section[id^='slot-']").forEach(section => {
+    section.style.display = state.layout.stored_slots.includes(section.id) ? "none" : "";
+  });
+
+  if (stored) {
+    stored.innerHTML = "";
+    state.layout.stored_slots.forEach(slotId => {
+      const section = document.getElementById(slotId);
+      if (!section) return;
+
+      const btn = document.createElement("button");
+      btn.className = "stored-window-button";
+      btn.dataset.restoreSlot = slotId;
+      btn.textContent = "Restore " + slotId;
+      btn.onclick = () => restoreStoredSlot(slotId);
+      stored.appendChild(btn);
+    });
+  }
+}
+
+function runLocalSearch() {
+  const q = document.getElementById("localSearchQuery").value.trim().toLowerCase();
+  const out = document.getElementById("localSearchResults");
+
+  if (!q) {
+    out.textContent = "Enter a search query.";
+    return;
+  }
+
+  const results = [];
+
+  state.emails.forEach(email => {
+    const emailText = [
+      email.id,
+      email.from,
+      email.subject,
+      email.body,
+      email.received_at,
+      email.read_at || "",
+      email.workflow.index_id,
+      email.workflow.status,
+      email.workflow.claimed_by,
+      email.workflow.awaiting_type,
+      ...(email.workflow.tasks || []),
+      ...(email.attachments || [])
+    ].join(" ").toLowerCase();
+
+    if (emailText.includes(q)) {
+      results.push({
+        type: "email_or_workflow",
+        email_id: email.id,
+        workflow_item_id: email.workflow.index_id,
+        subject: email.subject,
+        status: email.workflow.status,
+        mock: true
+      });
+    }
+  });
+
+  state.receipts.forEach(rcpt => {
+    const receiptText = JSON.stringify(rcpt).toLowerCase();
+    if (receiptText.includes(q)) {
+      results.push({
+        type: "receipt",
+        receipt_id: rcpt.receipt_id,
+        action: rcpt.action,
+        workflow_item_id: rcpt.workflow_item_id,
+        at: rcpt.at,
+        mock: true
+      });
+    }
+  });
+
+  out.textContent = results.length
+    ? JSON.stringify(results, null, 2)
+    : "No local MOCK results found for: " + q;
+
+  receipt("local_search_mock", "Searched local browser state for: " + q + ". Results: " + results.length + ".");
+}
+
+function clearLocalSearch() {
+  document.getElementById("localSearchQuery").value = "";
+  document.getElementById("localSearchResults").textContent = "No search run yet.";
+  receipt("clear_local_search_mock", "Cleared local MOCK search box/results.");
+}
+
+function makeWorkspacePackage() {
+  recordLayoutState();
+
+  return {
+    package_version: WORKSPACE_PACKAGE_VERSION,
+    exported_at: now(),
+    source: "RoadOS Email Workflow Plain Proof",
+    honesty: {
+      mock: true,
+      no_gmail: true,
+      no_real_send: true,
+      no_external_api: true,
+      no_secrets: true,
+      no_production_claim: true
+    },
+    state: state
+  };
+}
+
+function exportWorkspacePackage() {
+  const box = document.getElementById("workspacePackageIO");
+  const pkg = makeWorkspacePackage();
+  box.value = JSON.stringify(pkg, null, 2);
+  receipt("export_workspace_package_mock", "Exported full MOCK workspace package JSON.");
+}
+
+function importWorkspacePackage() {
+  const box = document.getElementById("workspacePackageIO");
+
+  try {
+    const pkg = JSON.parse(box.value);
+
+    if (!pkg || pkg.package_version !== WORKSPACE_PACKAGE_VERSION) {
+      alert("Invalid package: package_version mismatch.");
+      return;
+    }
+
+    if (!pkg.state || !Array.isArray(pkg.state.emails) || !Array.isArray(pkg.state.receipts)) {
+      alert("Invalid package: missing state.emails[] or state.receipts[].");
+      return;
+    }
+
+    state = pkg.state;
+    ensureLayoutState();
+    saveState();
+    applyLayoutState();
+
+    receipt("import_workspace_package_mock", "Imported full MOCK workspace package JSON.");
+  } catch (err) {
+    alert("Could not parse workspace package JSON.");
+  }
+}
+
+function downloadWorkspacePackage() {
+  const pkg = makeWorkspacePackage();
+  const text = JSON.stringify(pkg, null, 2);
+  const blob = new Blob([text], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "roados-email-workflow-package-v0.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+
+  receipt("download_workspace_package_mock", "Downloaded full MOCK workspace package JSON.");
+}
+
+function applyWorkspacePreset(name) {
+  ensureLayoutState();
+
+  const preset = workspacePresets[name];
+  if (!preset) {
+    alert("Unknown preset: " + name);
+    return;
+  }
+
+  state.layout.slot_order = preset.slot_order.slice();
+  state.layout.stored_slots = preset.stored_slots.slice();
+  state.layout.updated_at = now();
+  saveState();
+  applyLayoutState();
+
+  const output = document.getElementById("workspacePresetOutput");
+  if (output) {
+    output.textContent = "Applied " + preset.name + "\n" + JSON.stringify(state.layout, null, 2);
+  }
+
+  receipt("apply_workspace_preset_mock", "Applied " + preset.name + " workspace preset.");
+}
+
+function saveCurrentWorkspacePreset() {
+  recordLayoutState();
+
+  const output = document.getElementById("workspacePresetOutput");
+  if (output) {
+    output.textContent = "Saved current layout MOCK\n" + JSON.stringify(state.layout, null, 2);
+  }
+
+  receipt("save_workspace_layout_mock", "Saved current RoadOS layout to local browser state.");
+}
+
+function selectedEmail() {
+  return state.emails.find(e => e.id === state.selectedId);
+}
+
+function receipt(action, detail) {
+  const e = selectedEmail();
+  state.receipts.unshift({
+    receipt_id: "MOCK-RCPT-" + Math.random().toString(16).slice(2, 10),
+    at: now(),
+    email_id: e.id,
+    workflow_item_id: e.workflow.index_id,
+    action,
+    detail,
+    mock: true
+  });
+  render();
+}
+
+function selectEmail(id) {
+  state.selectedId = id;
+  const e = selectedEmail();
+  if (!e.read_at) {
+    e.read_at = now();
+    e.workflow.status = "read";
+    receipt("read_email", "Email opened and marked read.");
+  }
+  render();
+}
+
+function claimItem() {
+  const e = selectedEmail();
+  e.workflow.claimed_by = "alexandria";
+  e.workflow.status = "triaged";
+  receipt("claim", "Claimed by alexandria.");
+}
+
+function startWork() {
+  selectedEmail().workflow.status = "in_progress";
+  receipt("start_work", "Moved to in_progress.");
+}
+
+function setAwaiting() {
+  const type = document.getElementById("awaitingType").value;
+  if (!type) { alert("Choose awaiting type first."); return; }
+  const e = selectedEmail();
+  e.workflow.status = "awaiting";
+  e.workflow.awaiting_type = type;
+  receipt("set_awaiting", "Awaiting type set to " + type + ".");
+}
+
+function completeItem() {
+  selectedEmail().workflow.status = "done";
+  receipt("complete", "Moved to done.");
+}
+
+function draftReply() {
+  document.getElementById("compose").value = "MOCK DRAFT\\n\\nHi,\\n\\nThanks for the update. I am reviewing this and will follow up shortly.\\n\\nBest,\\nAlexa";
+  receipt("draft_reply", "MOCK draft inserted.");
+}
+
+function sendMock() {
+  receipt("send_mock", "MOCK only. No email was sent.");
+}
+
+function summarizeMock() {
+  const e = selectedEmail();
+  document.getElementById("aiOutput").textContent = "MOCK SUMMARY: " + e.subject + ". Status: " + e.workflow.status + ".";
+  receipt("ai_summarize_mock", "MOCK summary generated.");
+}
+
+function createTask() {
+  const e = selectedEmail();
+  const task = "MOCK task " + (e.workflow.tasks.length + 1) + ": follow up on " + e.subject;
+  e.workflow.tasks.push(task);
+  receipt("create_task_mock", task);
+}
+
+function markRisk() {
+  document.getElementById("aiOutput").textContent = "MOCK RISK: human review required before external action.";
+  receipt("mark_risk_mock", "Risk marked.");
+}
+
+function previewAttachment(name) {
+  document.getElementById("filePreview").textContent = "MOCK FILE PREVIEW: " + name + "\\nNo file opened.";
+  receipt("preview_attachment_mock", name);
+}
+
+function giveAgentContext() {
+  const e = selectedEmail();
+  document.getElementById("agentOutput").textContent = "MOCK CONTEXT SHARED with Roadie: " + e.subject;
+  receipt("agent_context_mock", "Context shared with Roadie MOCK.");
+}
+
+loadState();
+ensureLayoutState();
+
+
+function restoreExpanded() {
+  document.querySelectorAll(".expanded-window").forEach(el => {
+    el.classList.remove("expanded-window");
+    const btn = el.querySelector(".restore-button");
+    if (btn) btn.remove();
+  });
+  receipt("restore_window_mock", "Restored expanded RoadOS window to original road spot.");
+}
+
+function expandSlot(section) {
+  if (section.classList.contains("expanded-window")) {
+    restoreExpanded();
+    return;
+  }
+
+  document.querySelectorAll(".expanded-window").forEach(el => {
+    el.classList.remove("expanded-window");
+    const btn = el.querySelector(".restore-button");
+    if (btn) btn.remove();
+  });
+
+  section.classList.add("expanded-window");
+
+  if (!section.querySelector(".restore-button")) {
+    const btn = document.createElement("button");
+    btn.className = "restore-button";
+    btn.textContent = "Restore";
+    btn.onclick = (event) => {
+      event.stopPropagation();
+      restoreExpanded();
+    };
+    section.insertBefore(btn, section.firstChild);
+  }
+
+  receipt("expand_window_mock", "Expanded " + section.id + " toward full screen.");
+}
+
+function focusSlot(section) {
+  document.querySelectorAll(".grid section").forEach(el => el.classList.remove("window-focused"));
+  section.classList.add("window-focused");
+}
+
+
+let draggedRoadSlot = null;
+
+function swapRoadSlots(a, b) {
+  if (!a || !b || a === b) return;
+
+  const parent = a.parentNode;
+  const aMarker = document.createElement("div");
+  const bMarker = document.createElement("div");
+
+  parent.insertBefore(aMarker, a);
+  parent.insertBefore(bMarker, b);
+
+  parent.insertBefore(a, bMarker);
+  parent.insertBefore(b, aMarker);
+
+  aMarker.remove();
+  bMarker.remove();
+
+  recordLayoutState();
+
+  receipt("swap_road_slots_mock", "Swapped " + a.id + " with " + b.id + " by drag/drop.");
+}
+
+function setupRoadDragSwap() {
+  document.querySelectorAll(".grid section").forEach(section => {
+    if (section.dataset.roadDragBound === "true") return;
+    section.dataset.roadDragBound = "true";
+    section.setAttribute("draggable", "true");
+
+    section.addEventListener("dragstart", event => {
+      if (event.target.closest("button, textarea, select, input")) {
+        event.preventDefault();
+        return;
+      }
+
+      draggedRoadSlot = section;
+      section.classList.add("road-dragging");
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("text/plain", section.id);
+    });
+
+    section.addEventListener("dragend", () => {
+      section.classList.remove("road-dragging");
+      document.querySelectorAll(".road-drag-over").forEach(el => el.classList.remove("road-drag-over"));
+      draggedRoadSlot = null;
+    });
+
+    section.addEventListener("dragover", event => {
+      event.preventDefault();
+      if (draggedRoadSlot && draggedRoadSlot !== section) {
+        section.classList.add("road-drag-over");
+        event.dataTransfer.dropEffect = "move";
+      }
+    });
+
+    section.addEventListener("dragleave", () => {
+      section.classList.remove("road-drag-over");
+    });
+
+    section.addEventListener("drop", event => {
+      event.preventDefault();
+      section.classList.remove("road-drag-over");
+
+      if (!draggedRoadSlot || draggedRoadSlot === section) return;
+
+      swapRoadSlots(draggedRoadSlot, section);
+    });
+  });
+}
+
+
+function storeRoadSlot(section) {
+  if (!section) return;
+
+  section.style.display = "none";
+
+  const stored = document.getElementById("storedWindows");
+  const existing = stored.querySelector(`[data-restore-slot="${section.id}"]`);
+
+  if (!existing) {
+    const btn = document.createElement("button");
+    btn.className = "stored-window-button";
+    btn.dataset.restoreSlot = section.id;
+    btn.textContent = "Restore " + section.id;
+    btn.onclick = () => restoreStoredSlot(section.id);
+    stored.appendChild(btn);
+  }
+
+  recordLayoutState();
+
+  receipt("dock_store_window_mock", "Stored " + section.id + " back to dock storage.");
+}
+
+function restoreStoredSlot(slotId) {
+  const section = document.getElementById(slotId);
+  if (!section) return;
+
+  section.style.display = "";
+
+  const stored = document.getElementById("storedWindows");
+  const btn = stored.querySelector(`[data-restore-slot="${slotId}"]`);
+  if (btn) btn.remove();
+
+  recordLayoutState();
+
+  receipt("dock_restore_window_mock", "Restored " + slotId + " from dock storage.");
+}
+
+function setupDockStorage() {
+  const dockTargets = document.querySelectorAll(".dock button, #road-dock-storage");
+
+  dockTargets.forEach(target => {
+    if (target.dataset.dockDropBound === "true") return;
+    target.dataset.dockDropBound = "true";
+
+    target.addEventListener("dragover", event => {
+      event.preventDefault();
+      if (draggedRoadSlot) {
+        target.classList.add("dock-drop-target");
+        event.dataTransfer.dropEffect = "move";
+      }
+    });
+
+    target.addEventListener("dragleave", () => {
+      target.classList.remove("dock-drop-target");
+    });
+
+    target.addEventListener("drop", event => {
+      event.preventDefault();
+      target.classList.remove("dock-drop-target");
+
+      if (!draggedRoadSlot) return;
+
+      storeRoadSlot(draggedRoadSlot);
+      draggedRoadSlot.classList.remove("road-dragging");
+      draggedRoadSlot = null;
+
+      document.querySelectorAll(".road-drag-over, .dock-drop-target").forEach(el => {
+        el.classList.remove("road-drag-over");
+        el.classList.remove("dock-drop-target");
+      });
+    });
+  });
+}
+
+function setupWindowBehavior() {
+  document.querySelectorAll(".grid section").forEach(section => {
+    if (section.dataset.roadBound === "true") return;
+    section.dataset.roadBound = "true";
+
+    section.addEventListener("click", () => {
+      focusSlot(section);
+    });
+
+    section.addEventListener("dblclick", (event) => {
+      if (event.target.tagName === "BUTTON" || event.target.tagName === "TEXTAREA" || event.target.tagName === "SELECT") return;
+      expandSlot(section);
+    });
+  });
+
+  if (!window.__roadEscapeBound) {
+    window.__roadEscapeBound = true;
+    window.addEventListener("keydown", event => {
+      if (event.key === "Escape") restoreExpanded();
+    });
+  }
+}
+
+function getFilteredEmails() {
+  const statusFilter = document.getElementById("inboxStatusFilter")?.value || "all";
+  const sortMode = document.getElementById("inboxSortMode")?.value || "received_desc";
+
+  let emails = state.emails.slice();
+
+  if (statusFilter !== "all") {
+    emails = emails.filter(email => email.workflow.status === statusFilter);
+  }
+
+  emails.sort((a, b) => {
+    if (sortMode === "received_asc") return String(a.received_at).localeCompare(String(b.received_at));
+    if (sortMode === "received_desc") return String(b.received_at).localeCompare(String(a.received_at));
+    if (sortMode === "subject_asc") return String(a.subject).localeCompare(String(b.subject));
+    if (sortMode === "status_asc") return String(a.workflow.status).localeCompare(String(b.workflow.status));
+    return 0;
+  });
+
+  const summary = document.getElementById("inboxFilterSummary");
+  if (summary) {
+    summary.textContent = JSON.stringify({
+      mock: true,
+      status_filter: statusFilter,
+      sort_mode: sortMode,
+      visible_count: emails.length,
+      total_count: state.emails.length
+    }, null, 2);
+  }
+
+  return emails;
+}
+
+function clearInboxFilters() {
+  const status = document.getElementById("inboxStatusFilter");
+  const sort = document.getElementById("inboxSortMode");
+
+  if (status) status.value = "all";
+  if (sort) sort.value = "received_desc";
+
+  receipt("clear_inbox_filters_mock", "Cleared local inbox filters.");
+  render();
+}
+
+function render() {
+  saveState();
+  const e = selectedEmail();
+
+  document.getElementById("inbox").innerHTML = getFilteredEmails().map(email => `
+    <div class="item ${email.id === state.selectedId ? "active" : ""}" onclick="selectEmail(&quot;${email.id}&quot;)">
+      <strong>${email.subject}</strong><br>
+      From: ${email.from}<br>
+      Received: ${email.received_at}<br>
+      Status: ${email.workflow.status}<br>
+      <span class="mock">MOCK</span>
+    </div>
+  `).join("");
+
+  document.getElementById("thread").innerHTML = `
+    <strong>${e.subject}</strong><br>
+    From: ${e.from}<br>
+    Email ID: ${e.id}<br>
+    Read at: ${e.read_at || "not read yet"}<br>
+    Workflow: ${e.workflow.index_id}<hr>
+    <p>${e.body}</p><span class="mock"><span class="mock">MOCK THREAD</span></span>
+  `;
+
+  document.getElementById("workflow").innerHTML = `
+    <strong>${e.workflow.index_id}</strong><br>
+    Status: ${e.workflow.status}<br>
+    Claimed by: ${e.workflow.claimed_by || "unclaimed"}<br>
+    Awaiting type: ${e.workflow.awaiting_type || "none"}<br>
+    Tasks:<ul>${e.workflow.tasks.map(t => `<li>${t}</li>`).join("") || "<li>none</li>"}</ul>
+  `;
+
+  document.getElementById("attachments").innerHTML = e.attachments.map(name => `<button onclick="previewAttachment(&quot;${name}&quot;)">${name} MOCK</button><br>`).join("");
+
+  document.getElementById("receipts").textContent = state.receipts.length ? JSON.stringify(state.receipts, null, 2) : "No receipts yet.";
+  setupWindowBehavior();
+  setupRoadDragSwap();
+  setupDockStorage();
+  applyLayoutState();
+}
+
+render();
+</script>
+</body>
+</html>
