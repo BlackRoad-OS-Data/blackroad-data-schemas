@@ -38,6 +38,15 @@
     .window-focused {
       outline: 3px solid #111;
     }
+  
+    .road-drag-over {
+      outline: 4px dashed #111;
+      background: #fafafa;
+    }
+
+    .road-dragging {
+      opacity: .45;
+    }
   </style>
 </head>
 <body>
@@ -45,7 +54,7 @@
   <div class="truth">
     <strong><span class="mock">LOCAL MOCK PROOF.</span></strong>
     No Gmail. No real send. No external API. No secrets. No production claim.
-    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return.
+    Every action changes local browser state and writes a visible mock receipt. Double-click any slot to expand it. Press Escape or click Restore to return. Drag any slot onto another slot to swap/exchange road spots.
   </div>
 
   <section id="local-state-controls">
@@ -292,6 +301,75 @@ function focusSlot(section) {
   section.classList.add("window-focused");
 }
 
+
+let draggedRoadSlot = null;
+
+function swapRoadSlots(a, b) {
+  if (!a || !b || a === b) return;
+
+  const parent = a.parentNode;
+  const aMarker = document.createElement("div");
+  const bMarker = document.createElement("div");
+
+  parent.insertBefore(aMarker, a);
+  parent.insertBefore(bMarker, b);
+
+  parent.insertBefore(a, bMarker);
+  parent.insertBefore(b, aMarker);
+
+  aMarker.remove();
+  bMarker.remove();
+
+  receipt("swap_road_slots_mock", "Swapped " + a.id + " with " + b.id + " by drag/drop.");
+}
+
+function setupRoadDragSwap() {
+  document.querySelectorAll(".grid section").forEach(section => {
+    if (section.dataset.roadDragBound === "true") return;
+    section.dataset.roadDragBound = "true";
+    section.setAttribute("draggable", "true");
+
+    section.addEventListener("dragstart", event => {
+      if (event.target.closest("button, textarea, select, input")) {
+        event.preventDefault();
+        return;
+      }
+
+      draggedRoadSlot = section;
+      section.classList.add("road-dragging");
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("text/plain", section.id);
+    });
+
+    section.addEventListener("dragend", () => {
+      section.classList.remove("road-dragging");
+      document.querySelectorAll(".road-drag-over").forEach(el => el.classList.remove("road-drag-over"));
+      draggedRoadSlot = null;
+    });
+
+    section.addEventListener("dragover", event => {
+      event.preventDefault();
+      if (draggedRoadSlot && draggedRoadSlot !== section) {
+        section.classList.add("road-drag-over");
+        event.dataTransfer.dropEffect = "move";
+      }
+    });
+
+    section.addEventListener("dragleave", () => {
+      section.classList.remove("road-drag-over");
+    });
+
+    section.addEventListener("drop", event => {
+      event.preventDefault();
+      section.classList.remove("road-drag-over");
+
+      if (!draggedRoadSlot || draggedRoadSlot === section) return;
+
+      swapRoadSlots(draggedRoadSlot, section);
+    });
+  });
+}
+
 function setupWindowBehavior() {
   document.querySelectorAll(".grid section").forEach(section => {
     if (section.dataset.roadBound === "true") return;
@@ -350,6 +428,7 @@ function render() {
 
   document.getElementById("receipts").textContent = state.receipts.length ? JSON.stringify(state.receipts, null, 2) : "No receipts yet.";
   setupWindowBehavior();
+  setupRoadDragSwap();
 }
 
 render();
